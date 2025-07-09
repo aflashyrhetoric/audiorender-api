@@ -1,13 +1,8 @@
-import AppLogoIcon from './app-logo-icon';
-
-export default function AppLogo() {
+export default function AppLogo({ className = '' }) {
     return (
         <>
-            <div className="flex aspect-square size-8 items-center justify-center rounded-md bg-sidebar-primary text-sidebar-primary-foreground">
-                <AppLogoIcon className="size-5 fill-current text-white dark:text-black" />
-            </div>
-            <div className="ml-1 grid flex-1 text-left text-sm">
-                <span className="mb-0.5 truncate leading-tight font-semibold">Laravel Starter Kit</span>
+            <div className={`flex aspect-square items-center justify-center ${className}`}>
+                <img src={'/img/app-icon.png'} alt={'AudioRender application logo'} />
             </div>
         </>
     );

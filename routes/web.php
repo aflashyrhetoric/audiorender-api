@@ -1,11 +1,26 @@
 <?php
 
+use App\Http\Controllers\CheckoutController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Laravel\Cashier\Checkout;
 
 Route::get('/', function () {
     return Inertia::render('welcome');
 })->name('home');
+
+
+Route::get('/product-checkout', function (Request $request) {
+    $priceId = 'price_1RgYVI0505pw7M7z2rzb9FWw';
+    return Checkout::guest()->create($priceId, [
+        'success_url' => route('checkout-success'),
+        'cancel_url' => route('checkout-cancel'),
+    ]);
+})->name('checkout-page');
+
+Route::get('/checkout/success', [CheckoutController::class, 'handleCheckoutSuccess'])->name('checkout-success');
+Route::get('/checkout/cancel', [CheckoutController::class, 'handleCheckoutSuccess'])->name('checkout-cancel');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {
