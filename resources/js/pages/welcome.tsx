@@ -22,7 +22,7 @@ export default function Welcome() {
 
     return (
         <>
-            <Head title="Welcome">
+            <Head title="AudioRender">
                 <link rel="preconnect" href="https://fonts.bunny.net" />
                 <link href="https://fonts.bunny.net/css?family=alegreya-sans:100,400,700,900|inter:400,500,600|amaranth:400,700" rel="stylesheet" />
             </Head>
@@ -34,10 +34,10 @@ export default function Welcome() {
                             <h1 className="font-alegreya text-[2rem] font-normal tracking-tight">audiorender</h1>
                         </div>
                         <p className={`fic mt-10 gap-2 font-amaranth text-[4rem] tracking-tight`}>Create still-image videos from mp3 files.</p>
-                        <p className={`fic font-amaranth mt-4 mb-8 gap-2 text-[2rem] tracking-tight`}>
-                            One-at-a-time or in bulk. Ready to upload.
-                        </p>
-                        <div className={`text-xl`}>
+                        {/*<p className={`fic font-inter mt-4 mb-8 gap-2 text-[1.5rem] font-bold tracking-tight`}>*/}
+                        {/*    One-at-a-time or in bulk. Ready to upload.*/}
+                        {/*</p>*/}
+                        <div className={`mt-8 text-xl`}>
                             <ul className={`fc flex-col space-y-3 font-sans text-lg font-medium`}>
                                 <li className={`fic`}>
                                     <span className={`mr-2`}> <Checkmark size={'medium'} /> </span>

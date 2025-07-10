@@ -1,0 +1,49 @@
+{
+    "_meta": {
+        "template_version": 0
+    },
+    "fixtures": [
+        {
+            "name": "cus_annie_lala",
+            "path": "/v1/customers",
+            "method": "post",
+            "params": {
+                "name": "Annie Lala",
+                "email": "annie@gmail.com",
+                "metadata": {
+                    "test_run": "charge_succeeded_license_test"
+                }
+            }
+        },
+        {
+            "name": "pi_annie_lala",
+            "path": "/v1/payment_intents",
+            "method": "post",
+            "params": {
+                "amount": 5000,
+                "currency": "usd",
+                "customer": "${cus_annie_lala:id}",
+                "payment_method": "pm_card_visa",
+                "payment_method_types": [
+                    "card"
+                ],
+                "description": "One-time license purchase",
+                "confirm": true,
+                "capture_method": "manual",
+                "automatic_payment_methods": {
+                    "enabled": false
+                }
+            }
+        },
+        {
+            "name": "pi_annie_lala_capture",
+            "path": "/v1/payment_intents/${pi_annie_lala:id}/capture",
+            "method": "post"
+        },
+        {
+            "name": "delete_cus_annie_lala",
+            "path": "/v1/customers/${cus_annie_lala:id}",
+            "method": "delete"
+        }
+    ]
+}

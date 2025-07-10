@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CheckoutController;
+use App\Models\Customer;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -9,6 +10,14 @@ use Laravel\Cashier\Checkout;
 Route::get('/', function () {
     return Inertia::render('welcome');
 })->name('home');
+
+Route::get('/test-email', function() {
+    $test_customer = new Customer();
+    $test_customer->email = 'test@gmail.com';
+    $test_customer->license_key = 'test-license-key';
+
+    return new \App\Mail\LicenseKeyMail($test_customer);
+});
 
 
 Route::get('/product-checkout', function (Request $request) {
