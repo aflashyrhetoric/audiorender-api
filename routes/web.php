@@ -14,7 +14,7 @@ Route::get('/', function () {
 Route::get('/test-email', function() {
     $test_customer = new Customer();
     $test_customer->email = 'test@gmail.com';
-    $test_customer->license_key = 'test-license-key';
+    $test_customer->license_key = Str::upper(Str::random(20));
 
     return new \App\Mail\LicenseKeyMail($test_customer);
 });

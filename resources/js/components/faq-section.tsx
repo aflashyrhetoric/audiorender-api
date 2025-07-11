@@ -96,11 +96,11 @@ const FAQSection: React.FC<Props> = ({ className = '' }: Props) => {
                     key={`faq-section-${section}`}
                     className={`border-0 pr-4 transition-all hover:bg-neutral-800 hover:pl-4`}
                 >
-                    <AccordionTrigger className={`font-inter text-3xl`}>{section.title}</AccordionTrigger>
+                    <AccordionTrigger className={`font-inter text-xl lg:text-3xl`}>{section.title}</AccordionTrigger>
                     {section.content ? (
-                        <AccordionContent className={`font-inter rounded bg-neutral-800 p-10 text-2xl`}>{section.content}</AccordionContent>
+                        <AccordionContent className={`font-inter rounded bg-neutral-800 p-10 text-lg lg:text-2xl`}>{section.content}</AccordionContent>
                     ) : (
-                        <AccordionContent className={`font-inter rounded bg-neutral-800 p-10 py-4 pb-10 text-2xl text-neutral-200`}>
+                        <AccordionContent className={`font-inter rounded bg-neutral-800 p-10 py-4 pb-10 text-xl lg:text-2xl text-neutral-200`}>
                             {section.text}
                         </AccordionContent>
                     )}

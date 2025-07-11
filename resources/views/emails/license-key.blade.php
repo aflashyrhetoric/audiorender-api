@@ -3,22 +3,26 @@
 
 Your license has been associated with the email:
 
-**{{ $customer->email }}**
+✉️ **{{ $customer->email }}**
 
-Your license key is below:
+Your License Key is below:
 
-    **{{ $customer->license_key }}**
+👉 **{{ $customer->license_key }}** 👈
+
+---
 
 ## To activate your license, follow these steps:
-1. Open up AudioRender.
-2. Click the Settings button in the top right corner.
-3. Type in the e-mail address above.
-4. Paste in your license key.
-5. Hit the Activate button.
+1. Open AudioRender. 😎
+2. Click **Unlock Full Access** on the top bar of the app.
+3. Copy & paste the E-mail address above.
+4. Copy & paste the License Key address above.
+5. Click the **Register License** button.
 
+---
 
-We're grateful for your support and hope that it helps you in your audio projects.
-Please reach out out to contact@audiorender.app if you have any questions or need assistance.
+We're grateful for your support and hope that it helps you boost your audio content far and wide!
+
+Please don't hesitate to reach out to contact@audiorender.app if you have any questions or need assistance.
 
 {{-- If you want to add a button, uncomment the lines below and set the URL --}}
 

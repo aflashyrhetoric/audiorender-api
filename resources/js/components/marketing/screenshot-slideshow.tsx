@@ -15,8 +15,8 @@ export function ScreenshotSlideshow() {
                     </CarouselItem>
                 ))}
             </CarouselContent>
-            <CarouselPrevious className={`text-black hover:bg-neutral-200`} />
-            <CarouselNext className={`text-black hover:bg-neutral-200`} />
+            <CarouselPrevious className={`text-black hidden lg:block hover:bg-neutral-200`} />
+            <CarouselNext className={`text-black hidden lg:block hover:bg-neutral-200`} />
         </Carousel>
     );
 }
