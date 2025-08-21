@@ -9,9 +9,8 @@ return new class extends Migration {
     {
         Schema::create('license_activations', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('customer_id');
+            $table->unsignedBigInteger('customer_id')->nullable();
             $table->string('device_uuid');
-            $table->string('device_name');
             $table->timestamps();
         });
     }

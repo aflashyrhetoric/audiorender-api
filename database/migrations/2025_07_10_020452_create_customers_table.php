@@ -9,7 +9,6 @@ return new class extends Migration {
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
-            $table->string('stripe_customer_id');
             $table->string('email');
             $table->string('license_key');
             $table->string('status');

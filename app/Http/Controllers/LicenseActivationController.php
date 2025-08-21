@@ -2,14 +2,68 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
 use App\Models\LicenseActivation;
 use Illuminate\Http\Request;
+use Ramsey\Uuid\Uuid;
 
 class LicenseActivationController extends Controller
 {
     public function index()
     {
         return LicenseActivation::all();
+    }
+
+    public function register(Request $request)
+    {
+        $data = $request->validate([
+            'email' => ['required', 'email'],
+            'license_key' => ['required', 'string'],
+        ]);
+
+        // Find a customer where the email matches and "license_key" matches
+        $customer = Customer::where('email', $data['email'])
+            ->where('license_key', $data['license_key'])
+            ->first();
+
+        if (!$customer) {
+            return response()->json(['status'=>'error', 'error' => 'Invalid email or license key'], 404);
+        }
+
+        // Check how many license activations the customer already has, if any
+        $existingActivations = $customer->licenseActivations()->count();
+
+        // Create the license activation for the current device, based on UUID
+        $licenseActivation = LicenseActivation::create([
+            'customer_id' => $customer->id,
+            'device_uuid' => Uuid::uuid4()->toString(),
+            'device_name' => "device-" . ($existingActivations + 1),
+        ]);
+
+        return response()->json([
+            'email' => $data['email'],
+            'license_key' => $data['license_key'],
+            'status' => 'active',
+            'activation' => $licenseActivation
+        ]);
+    }
+
+    public function checkLicense(Request $request)
+    {
+        $data = $request->validate([
+            'email' => ['required'],
+        ]);
+
+        // Find a customer where the email matches and "license_key" is not null
+        $licenseActivation = Customer::where('email', $data['email'])
+            ->whereNotNull('license_key')
+            ->first();
+
+        if ($licenseActivation) {
+            return response()->json(['status' => 'active', 'activation' => $licenseActivation]);
+        }
+
+        return response()->json(['status' => 'inactive'], 404);
     }
 
     public function store(Request $request)

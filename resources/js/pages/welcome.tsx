@@ -2,20 +2,23 @@ import AppLogo from '@/components/app-logo';
 import { ScreenshotSlideshow } from '@/components/marketing/screenshot-slideshow';
 import { Button } from '@/components/ui/button';
 import { DownloadIcon } from '@/lib/icons';
-import { type SharedData } from '@/types';
-import { Head, usePage } from '@inertiajs/react';
+import { Head } from '@inertiajs/react';
 import { DotIcon } from 'lucide-react';
+// @ts-ignore
 import { Checkmark } from 'react-checkmark';
 import CountUp from 'react-countup';
 import { FaYoutube } from 'react-icons/fa6';
 
 import FAQSection from '@/components/faq-section';
+import SiteFooter from '@/components/site-footer';
+import FeatureSquare from '@/pages/feature-square';
+import VideoHeading from '@/pages/partials/video-heading';
+import VideoLabel from '@/pages/partials/video-label';
 import { useInView } from 'motion/react';
 import { useRef } from 'react';
+import { LuArrowBigDown, LuImage, LuVideo } from 'react-icons/lu';
 
 export default function Welcome() {
-    const { auth } = usePage<SharedData>().props;
-
     const ref = useRef(null);
     const secondSectionIsInView = useInView(ref);
 
@@ -27,29 +30,18 @@ export default function Welcome() {
             </Head>
             <div className="gradient-dark flex flex-col items-center text-white">
                 <main>
-                    <div className={`fc min-h-[60vh] lg:min-h-[80vh] flex-col`}>
-                        <div className="ific space-x-1">
-                            <AppLogo className={`size-10`} />
-                            <h1 className="font-alegreya text-[2rem] font-normal tracking-tight">audiorender</h1>
+                    <div className={`fc min-h-[60vh] flex-col lg:min-h-[95vh]`}>
+                        <div className="fc flex-col gap-6">
+                            <AppLogo className={`size-32`} />
+                            <h1 className="font-inter text-[2rem] font-bold tracking-tight">AudioRender</h1>
                         </div>
-                        <p className={`fic font-amaranth mt-10 gap-2 text-3xl md:text-4xl tracking-tight lg:text-[3rem] xl:text-[4rem]`}>
-                            Create still-image videos from mp3 files.
+                        <p className={`fic font-inter mt-10 gap-2 text-2xl font-bold tracking-tight md:text-4xl lg:text-[3rem]`}>
+                            Create upload-ready videos from mp3 files.
                         </p>
-                        {/*<p className={`fic font-inter mt-4 mb-8 gap-2 text-[1.5rem] font-bold tracking-tight`}>*/}
-                        {/*    One-at-a-time or in bulk. Ready to upload.*/}
-                        {/*</p>*/}
                         <div className={`mt-8 text-xl`}>
                             <ul className={`fc flex-col space-y-3 font-sans text-lg font-medium`}>
                                 <li className={`fic`}>
                                     <span className={`mr-2`}>
-                                        {' '}
-                                        <Checkmark size={'medium'} />{' '}
-                                    </span>
-                                    <span>Free basic features for audio under 10 minutes.</span>
-                                </li>
-                                <li className={`fic`}>
-                                    <span className={`mr-2`}>
-                                        {' '}
                                         <Checkmark size={'medium'} />{' '}
                                     </span>
                                     <span>Fully local. Hardware-accelerated.</span>
@@ -61,44 +53,161 @@ export default function Welcome() {
                                     </span>
                                     <span>No monthly subscription. No usage limits.</span>
                                 </li>
+                                <li className={`fic`}>
+                                    <span className={`mr-2`}>
+                                        {' '}
+                                        <Checkmark size={'medium'} />{' '}
+                                    </span>
+                                    <span>Audiogram templates w/ waveforms & transcriptions.</span>
+                                </li>
                             </ul>
                         </div>
                         <div className={`space-around mt-12 flex space-x-5`}>
                             <div className={`flex-col justify-center`}>
-                                <Button
-                                    className={`mt-2 flex h-10 justify-between bg-white px-4 text-lg font-bold tracking-tight text-black hover:bg-neutral-600 hover:text-white lg:h-18 lg:px-10 lg:text-xl`}
-                                >
-                                    <span>Download AudioRender</span>
-                                    <span>
-                                        <DownloadIcon className={`ml-2 lg:!h-[200px] lg:!w-[32px]`} />
-                                    </span>
-                                </Button>
+                                <a href={'https://files.audiorender.app/audiorender/AudioRender_0.1.0_aarch64.dmg'} download>
+                                    <Button
+                                        className={`mt-2 flex h-10 justify-between bg-white px-4 text-lg font-bold tracking-tight text-black hover:bg-neutral-600 hover:text-white lg:h-18 lg:px-10 lg:text-xl`}
+                                    >
+                                        <span>Download AudioRender</span>
+                                        <span>
+                                            <DownloadIcon className={`ml-2 lg:!h-[200px] lg:!w-[32px]`} />
+                                        </span>
+                                    </Button>
+                                </a>
                                 <p className={`tac mt-4 text-xs text-neutral-200`}>Free for audio &lt; 10min</p>
                                 <p className={`tac mt-2 text-xs text-neutral-200`}>Apple Silicon Only.</p>
                             </div>
                             <div className={`flex-col justify-center`}>
-                                <Button
-                                    variant="default"
-                                    className={`font-inter mt-2 flex h-10 justify-between bg-blue-500 px-4 text-lg font-bold tracking-tight text-white hover:bg-blue-700 lg:h-18 lg:px-10 lg:text-2xl`}
-                                >
-                                    <span>
-                                        Buy Now <DotIcon className={`ific`} /> $15
-                                    </span>
-                                    {/*<span>*/}
-                                    {/*    <DownloadIcon />*/}
-                                    {/*</span>*/}
-                                </Button>
+                                <a href={route('checkout-page')} target="_blank" rel="noreferrer noopener">
+                                    <Button
+                                        variant="default"
+                                        className={`font-inter mt-2 flex h-10 justify-between bg-blue-500 px-4 text-lg font-bold tracking-tight text-white hover:bg-blue-700 lg:h-18 lg:px-10 lg:text-2xl`}
+                                    >
+                                        <span>
+                                            Buy Now <DotIcon className={`ific`} /> $15
+                                        </span>
+                                    </Button>
+                                </a>
                                 <p className={`tac mt-4 text-xs text-neutral-200`}>Payment through Stripe.</p>
                             </div>
                         </div>
                     </div>
+                    <div className={`grid12 mb-12 lg:px-[12vw]`}>
+                        <div className="cs-12 tac mb-8">
+                            <h2 className={`ific mb-5`}>
+                                <span className={`mr-5 text-5xl`}>
+                                    <LuArrowBigDown className={`animate-bounce fill-white`} />
+                                </span>
+                                <span className={`font-inter text-4xl font-bold tracking-tight lg:text-4xl xl:text-5xl`}>See What You Can Make</span>
+                                <span className={`ml-5 text-5xl`}>
+                                    <LuArrowBigDown className={`animate-bounce fill-white`} />
+                                </span>
+                            </h2>
+                            <p className={`font-inter text-xl`}>Check out what you can make with AudioRender.</p>
+                        </div>
+                    </div>
+                    <div className={`grid12 mb-20 lg:px-[12vw] xl:mb-32`}>
+                        <div className={`cs-6`}>
+                            <VideoHeading className={`text-cyan-500`}>
+                                <LuVideo />
+                                <span className={`ml-3`}>Use A Looping Video</span>
+                            </VideoHeading>
+                            <iframe
+                                width="560"
+                                height="315"
+                                src="https://www.youtube.com/embed/2fRIdQKfpyI?si=bOGOET44HZbBYvY9"
+                                title="YouTube video player"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerPolicy="strict-origin-when-cross-origin"
+                                allowFullScreen
+                            ></iframe>
+                            <VideoLabel text={'Use an MP4 to create looping video backgrounds'} additionalTags={['Plug & Play', 'Loops Endlessly']} />
+                        </div>
+                        <div className={`cs-6`}>
+                            <VideoHeading className={`text-emerald-500`}>
+                                <LuImage />
+                                <span className={`ml-3`}>Use An Image</span>
+                            </VideoHeading>
+                            <iframe
+                                width="560"
+                                height="315"
+                                src="https://www.youtube.com/embed/4gLtEHcpM8Q?si=3tnyDfVZaqgiq2Ym"
+                                title="YouTube video player"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerPolicy="strict-origin-when-cross-origin"
+                                allowFullScreen
+                            ></iframe>
+                            <VideoLabel
+                                text={'Use a PNG to create branded video backgrounds'}
+                                additionalTags={['Plug & Play', 'Fast Render Speeds']}
+                            />
+                        </div>
+                    </div>
+                    <div className={`grid12 mb-20 lg:px-[12vw]`}>
+                        <div className="cs-12 tac mb-20">
+                            <h2 className={`mb-4`}>
+                                <span className={`font-inter text-2xl font-bold tracking-tight lg:text-4xl`}>
+                                    Use built-in templates to render with ease.
+                                </span>
+                            </h2>
+                            <p className={`ific font-inter text-xl`}>
+                                {/*<span className={`mr-2`}>*/}
+                                {/*    <Checkmark size={'small'} />*/}
+                                {/*</span>*/}
+                                Captions included. Waveforms included.
+                            </p>
+                        </div>
+                        <div className={`cs-6`}>
+                            <VideoHeading className={`text-pink-500`}>
+                                <span className={`ml-3`}>Flat-Style</span>
+                            </VideoHeading>
+                            <iframe
+                                width="560"
+                                height="315"
+                                src="https://www.youtube.com/embed/2fRIdQKfpyI?si=bOGOET44HZbBYvY9"
+                                title="YouTube video player"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerPolicy="strict-origin-when-cross-origin"
+                                allowFullScreen
+                            ></iframe>
+                            <VideoLabel
+                                text={'Use a PNG to create branded video backgrounds'}
+                                additionalTags={['Plug & Play', 'Fast Render Speeds']}
+                            />
+                        </div>
+                        <div className={`cs-6`}>
+                            <VideoHeading className={`text-purple-500`}>
+                                <span className={`ml-3`}>Card-Style</span>
+                            </VideoHeading>
+                            <iframe
+                                width="560"
+                                height="315"
+                                src="https://www.youtube.com/embed/4gLtEHcpM8Q?si=3tnyDfVZaqgiq2Ym"
+                                title="YouTube video player"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerPolicy="strict-origin-when-cross-origin"
+                                allowFullScreen
+                            ></iframe>
+                            <VideoLabel
+                                text={'Use a PNG to create branded video backgrounds'}
+                                additionalTags={['Plug & Play', 'Fast Render Speeds']}
+                            />
+                        </div>
+                    </div>
+                    <div className={`grid12 mb-20 gap-6 lg:px-[12vw]`}>
+                        <FeatureSquare icon={<LuVideo />}>Own your tools.</FeatureSquare>
+                    </div>
                     <div className={`w-full lg:px-[12vw]`}>
                         <h2 className={`tac`}>
-                            <span className={`font-inter text-2xl lg:text-4xl font-bold tracking-tight`}>Some screenshots of AudioRender.</span>
+                            <span className={`font-inter text-2xl font-bold tracking-tight lg:text-4xl`}>Some screenshots of AudioRender.</span>
                         </h2>
                         <ScreenshotSlideshow />
                     </div>
-                    <div className={`w-full px-4 lg:px-[12vw] tracking-tight`}>
+                    <div className={`w-full px-4 tracking-tight lg:px-[12vw]`}>
                         <p className={`font-inter text-2xl font-bold lg:text-6xl`} ref={ref}>
                             There are over{' '}
                             <strong className={`clip-gradient-text font-bold`}>{secondSectionIsInView && <CountUp end={1_000_000_000} />}</strong>
@@ -134,6 +243,7 @@ export default function Welcome() {
                     </div>
                 </main>
                 <div className="hidden h-16 lg:block"></div>
+                <SiteFooter />
             </div>
         </>
     );

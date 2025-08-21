@@ -24,20 +24,14 @@ class StripeEventListener
     public function handle(WebhookReceived $event): void
     {
         if ($event->payload['type'] === 'charge.succeeded') {
-            // We cannot directly get the email. Get the customer ID so we can call the stripe endpoint requesting the data.
-            $customerId = $event->payload['data']['object']['customer'];
+            $email = $event->payload['data']['object']['billing_details']['email'];
 
             // Retrieve the customer from Stripe
             try {
-                $stripeClient = new StripeClient(config('services.stripe.secret'));
-                $customer = $stripeClient->customers->retrieve($customerId, []);
-                $email = $customer['email'];
-
                 $licensingService = new LicensingService();
-                $newCustomer = $licensingService->initializeNewCustomer($customerId, $email);
+                $newCustomer = $licensingService->initializeNewCustomer($email);
                 Mail::to($newCustomer->email)
                     ->send(new LicenseKeyMail($newCustomer));
-
 
             } catch (\Stripe\Exception\ApiErrorException $e) {
                 // Handle the error, e.g., log it or notify the admin

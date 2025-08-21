@@ -11,7 +11,23 @@ Route::get('/', function () {
     return Inertia::render('welcome');
 })->name('home');
 
-Route::get('/test-email', function() {
+/**
+ * Legal Pages
+ */
+
+Route::get('/terms', function () {
+    return Inertia::render('terms');
+})->name('terms-of-use');
+
+Route::get('/privacy', function () {
+    return Inertia::render('privacy');
+})->name('privacy-policy');
+
+Route::get('/refund', function () {
+    return Inertia::render('refund');
+})->name('refund-policy');
+
+Route::get('/test-email', function () {
     $test_customer = new Customer();
     $test_customer->email = 'test@gmail.com';
     $test_customer->license_key = Str::upper(Str::random(20));
@@ -19,15 +35,22 @@ Route::get('/test-email', function() {
     return new \App\Mail\LicenseKeyMail($test_customer);
 });
 
-
 Route::get('/product-checkout', function (Request $request) {
-    $priceId = 'price_1RgYVI0505pw7M7z2rzb9FWw';
+    // TODO: Swap out with Stripe product price ID for PRODUCTION ENV
+
+    // Sandbox
+//    $priceId = 'price_1RgYVI0505pw7M7z2rzb9FWw';
+
+    // Get from env variable through config: services stripe priceId
+    $priceId = config('services.stripe.priceId');
+
     return Checkout::guest()->create($priceId, [
         'success_url' => route('checkout-success'),
         'cancel_url' => route('checkout-cancel'),
     ]);
 })->name('checkout-page');
 
+// TODO: Implement checkout success and cancel handlers + views
 Route::get('/checkout/success', [CheckoutController::class, 'handleCheckoutSuccess'])->name('checkout-success');
 Route::get('/checkout/cancel', [CheckoutController::class, 'handleCheckoutSuccess'])->name('checkout-cancel');
 
@@ -37,5 +60,5 @@ Route::middleware(['auth', 'verified'])->group(function () {
     })->name('dashboard');
 });
 
-require __DIR__.'/settings.php';
-require __DIR__.'/auth.php';
+require __DIR__ . '/settings.php';
+require __DIR__ . '/auth.php';

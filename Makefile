@@ -3,6 +3,10 @@
 migrate:
 	php artisan migrate
 
+# Rollbacks one migration
+rollback:
+	php artisan migrate:rollback --step=1
+
 # After you set this you have to change the webhook secret in the .env file
 webhook:
 	stripe listen --forward-to localhost/stripe/webhook/

@@ -8,41 +8,24 @@ type Props = {
 const FAQSection: React.FC<Props> = ({ className = '' }: Props) => {
     const faqSections = [
         {
-            title: 'How does AudioRender work?',
-            text: 'Upload your mp3 files into the application. Select an image and an output location. The image will be used as the "background" for the audio and you\'ll have an mp4 ready for upload wherever you like. Later, we plan to support both video templates and the use of a looping video instead of a still/static image.',
-            content: (
-                <div>
-                    <ol className={`list-decimal space-y-3 pl-5`}>
-                        <li>
-                            <span className={`mr-1 font-bold`}>Upload your mp3 files.</span>You can upload however many files you&apos;d like. Each one will be turned into its OWN video.
-                        </li>
-                        <li>
-                            <span className={`mr-1 font-bold`}>Upload an image - jpg or png.</span> This will be used on every frame, as the background for the video.
-                        </li>
-                        <li>
-                            <span className={`mr-1 font-bold`}>Select an Output Folder.</span>
-                        </li>
-                        <li>
-                            <span className={`mr-1 font-bold`}>Click Begin Render,</span> and simply wait for your computer to finish processing. It can take some time depending on your machine, so be patient!
-                        </li>
-                        <li>
-                            <span className={`mr-1 font-bold`}>Done!</span> You&apos;re ready to upload your videos wherever you like.
-                        </li>
-                    </ol>
-                </div>
-            ),
+            title: 'What is AudioRender?',
+            text: "AudioRender is a macOS app that lets you drop in an MP3 file and create simple, upload-ready videos with waveforms and transcriptions in a few clicks."
         },
         {
-            title: 'Does this support bulk video creation?',
-            text: 'Yes! Many "audio-only" podcasts have a backlog of MP3 files with no easy way to create videos from them. AudioRender lets you easily make dozens of videos at once, with ease.',
+            title: 'Is there a free version?',
+            text: "The trial version is free, with some limitations. Audio file duration is limited to under 10 minutes. Only the static image + looping video configurations are enabled. Audiograms - including waveform and transcription - are not available. We hope this allows those with simpler use-cases to comfortable use AudioRender for free, while allowing us to support ourselves as a business.",
         },
         {
-            title: 'What customization options are available?',
-            text: 'As of now, you can only use a static image that you import into the program. We soon plan to have a variety of templates, the option to use a looping video instead of a still image, as well as "add-on" effects like waveforms, baked-in captions, and more.',
+            title: 'What comes with a premium license?',
+            text: "No limits. All current and future features will be unlocked. Audiogram-style videos will also be available. Audiograms let you select stylistic templates with waveforms and transcriptions embedded into the video.",
+        },
+        {
+            title: 'How does this compare to ________?',
+            text: "AudioRender is a macOS app with a one-time payment. A paid license means no usage limits, no monthly costs, and no privacy concerns. We also make a deliberate trade-off: convention over configuration. If you're looking for fully-fledged video compositing software that lets you tweak your video to perfection, AudioRender is definitely not for you. However, if you're looking for a simple, reliable way to convert hours of audio into great-looking videos with some simple branding and preset customization options, AudioRender is happy to serve. 😎",
         },
         {
             title: 'Is this private? How does my data get used?',
-            text: 'Yes. The application is fully local and private. The only data we collect is your e-mail and very basic device detection and that is only for the purpose of license verification and device registration in order to prevent abuse.',
+            text: "Yes, it's fully private. The application is fully local. The only data we collect is your e-mail and very basic device detection and that is only for the purpose of license verification and device registration in order to prevent abuse. There is literally no way for us to see what audio files you're using, what images you upload, what videos you create, etc. We do not sell user data and our business model is entirely based on license sales.",
         },
         {
             title: 'Is there a device limit?',
@@ -50,42 +33,11 @@ const FAQSection: React.FC<Props> = ({ className = '' }: Props) => {
         },
         {
             title: 'Is there a version for Intel Macs? Or Windows / Linux?',
-            text: "No. We currently have no plans to expand to other platforms as of now because of limited resources, but we've selected our technology stack (Tauri) specifically to be compatible with other platforms if there is a demand. Please let us know if you'd like to see a version for your platform by contacting us.",
-        },
-        {
-            title: 'Are there bulk discounts for teams?',
-            text: 'Yes, please contact us. We can arrange ad-hoc discounts for teams that need to use AudioRender on many devices.',
+            text: "No. We currently have no plans to expand to other platforms as of now because of limited resources, but we've selected our technology stack to be relatively compatible with other architectures if there is a demand. Please let us know if you'd like to see a version for your platform by contacting us.",
         },
         {
             title: 'Are there educational discounts?',
-            text: 'Yes, please contact us. We can arrange significant discounts for educational institutions that need to use AudioRender on many devices.',
-        },
-        {
-            title: 'Why should I use AudioRender over _______?',
-            text: "Our . AudioRender is local software. Use it free with some limitations forever, or purchase it once, and it's yours. All processing happens on your device. While many similar applications have overlap with ours, they are often web-based, meaning you have to upload your MP3 files and download files once they're ready.",
-            content: (
-                <div>
-                    <p className={`mb-5 text-2xl`}>Fair question. Here are some of AudioRender&apos;s strengths:</p>
-                    <ol className={`list-decimal space-y-2 pl-5`}>
-                        <li>
-                            <span className={`mr-1 font-bold`}>Free for short audio files. One-time payment for everything else.</span>AudioRender is
-                            not a SaaS application. Use it free forever for audio files under 10 minutes, or unlock all available features with a
-                            one-time purchase. No subscription required.
-                        </li>
-                        <li>
-                            <span className={`mr-1 font-bold`}>Local-first. Bulk-friendly.</span>AudioRender processes everything locally on your
-                            device. Whether you need 1 video or 100, you can do it all. Web-based services often enforce monthly credits and other
-                            types of limitations.
-                        </li>
-                        <li>
-                            <span className={`mr-1 font-bold`}>Simplicity.</span>AudioRender has essentially no learning curve.
-                        </li>
-                        <li>
-                            <span className={`mr-1 font-bold`}>All future updates included.</span>All future updates to AudioRender will be included as a free update. If and when we decide to release a true successor app (e.g. AudioRender 2.0), we will offer a significant discount to existing users. (But that will not be for many, many years, if ever.)
-                        </li>
-                    </ol>
-                </div>
-            ),
+            text: 'Yes, please contact us. We may be able to arrange discounts for educational institutions that need to use AudioRender on many devices.',
         },
     ];
     return (
