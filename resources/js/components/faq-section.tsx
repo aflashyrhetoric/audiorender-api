@@ -39,13 +39,17 @@ const FAQSection: React.FC<Props> = ({ className = '' }: Props) => {
             title: 'Are there educational discounts?',
             text: 'Yes, please contact us. We may be able to arrange discounts for educational institutions that need to use AudioRender on many devices.',
         },
+        {
+            title: 'How can I contact customer support?',
+            text: 'Send us an email at contact@audiorender.app. Premium users will receive priority support.',
+        },
     ];
     return (
         <Accordion type="single" collapsible>
             {faqSections.map((section, index) => (
                 <AccordionItem
                     value={section.title}
-                    key={`faq-section-${section}`}
+                    key={`faq-section-${section.title}`}
                     className={`border-0 pr-4 transition-all hover:bg-neutral-800 hover:pl-4`}
                 >
                     <AccordionTrigger className={`font-inter text-xl lg:text-3xl`}>{section.title}</AccordionTrigger>

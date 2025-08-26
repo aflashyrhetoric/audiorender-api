@@ -50,9 +50,8 @@ Route::get('/product-checkout', function (Request $request) {
     ]);
 })->name('checkout-page');
 
-// TODO: Implement checkout success and cancel handlers + views
 Route::get('/checkout/success', [CheckoutController::class, 'handleCheckoutSuccess'])->name('checkout-success');
-Route::get('/checkout/cancel', [CheckoutController::class, 'handleCheckoutSuccess'])->name('checkout-cancel');
+Route::get('/checkout/cancel', [CheckoutController::class, 'handleCheckoutCanceled'])->name('checkout-cancel');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {

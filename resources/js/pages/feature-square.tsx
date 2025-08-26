@@ -8,9 +8,9 @@ type Props = {
 
 const FeatureSquare: React.FC<Props> = ({ icon, children, className = '' }: Props) => {
     return (
-        <div className={`cs-12 md:cs-6 rounded-full p-5 bg-black md:bg-red-500 ${className}`}>
-            <div>{icon}</div>
-            <p className={`text-2xl`}>{children}</p>
+        <div className={`cs-6 lg:cs-3 rounded-xl p-5 bg-black ${className}`}>
+            <div className={`mb-3 text-3xl`}>{icon}</div>
+            <p className={`text-base`}>{children}</p>
         </div>
     );
 };

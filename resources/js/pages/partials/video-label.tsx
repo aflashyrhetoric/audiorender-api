@@ -16,7 +16,7 @@ const VideoLabel: React.FC<Props> = ({ text, additionalTags = [], className = ''
     return (
         <div className={`mt-8 flex w-[3/5] flex-col items-center justify-center ${className}`}>
             <p className={`tac mb-5 text-xl font-bold text-balance`}>{text}</p>
-            <div className={`flex items-center gap-x-3`}>
+            <div className={`flex flex-wrap px-24 justify-center items-center gap-3`}>
                 {additionalTags.map((tag, index) => {
                     const bgColorClass = indexToBgColorClass[index % indexToBgColorClass.length];
                     return (

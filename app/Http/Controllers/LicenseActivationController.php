@@ -14,40 +14,6 @@ class LicenseActivationController extends Controller
         return LicenseActivation::all();
     }
 
-    public function register(Request $request)
-    {
-        $data = $request->validate([
-            'email' => ['required', 'email'],
-            'license_key' => ['required', 'string'],
-        ]);
-
-        // Find a customer where the email matches and "license_key" matches
-        $customer = Customer::where('email', $data['email'])
-            ->where('license_key', $data['license_key'])
-            ->first();
-
-        if (!$customer) {
-            return response()->json(['status'=>'error', 'error' => 'Invalid email or license key'], 404);
-        }
-
-        // Check how many license activations the customer already has, if any
-        $existingActivations = $customer->licenseActivations()->count();
-
-        // Create the license activation for the current device, based on UUID
-        $licenseActivation = LicenseActivation::create([
-            'customer_id' => $customer->id,
-            'device_uuid' => Uuid::uuid4()->toString(),
-            'device_name' => "device-" . ($existingActivations + 1),
-        ]);
-
-        return response()->json([
-            'email' => $data['email'],
-            'license_key' => $data['license_key'],
-            'status' => 'active',
-            'activation' => $licenseActivation
-        ]);
-    }
-
     public function checkLicense(Request $request)
     {
         $data = $request->validate([
@@ -101,4 +67,40 @@ class LicenseActivationController extends Controller
 
         return response()->json();
     }
+
+
+// Old method that I'm keeping for posterity, but it probably isn't being used and doesn't match our flow. StripeEventListener.php handles the logic of registering a new customer and creating a license
+//    public function register(Request $request)
+//    {
+//        $data = $request->validate([
+//            'email' => ['required', 'email'],
+//            'license_key' => ['required', 'string'],
+//        ]);
+//
+//        // Find a customer where the email matches and "license_key" matches
+//        $customer = Customer::where('email', $data['email'])
+//            ->where('license_key', $data['license_key'])
+//            ->first();
+//
+//        if (!$customer) {
+//            return response()->json(['status'=>'error', 'error' => 'Invalid email or license key'], 404);
+//        }
+//
+//        // Check how many license activations the customer already has, if any
+//        $existingActivations = $customer->licenseActivations()->count();
+//
+//        // Create the license activation for the current device, based on UUID
+//        $licenseActivation = LicenseActivation::create([
+//            'customer_id' => $customer->id,
+//            'device_uuid' => Uuid::uuid4()->toString(),
+//            'device_name' => "device-" . ($existingActivations + 1),
+//        ]);
+//
+//        return response()->json([
+//            'email' => $data['email'],
+//            'license_key' => $data['license_key'],
+//            'status' => 'active',
+//            'activation' => $licenseActivation
+//        ]);
+//    }
 }

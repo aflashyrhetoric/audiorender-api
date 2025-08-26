@@ -7,7 +7,6 @@ use App\Services\LicensingService;
 use Laravel\Cashier\Events\WebhookReceived;
 use Mail;
 use Stripe\StripeClient;
-use function dump;
 
 class StripeEventListener
 {

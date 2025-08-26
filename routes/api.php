@@ -10,6 +10,6 @@ Route::get('/user', function (Request $request) {
 
 
 Route::prefix('v1')->group(function() {
-    Route::post('/license/register', [LicenseActivationController::class, 'register'])->name('license.register');
+//    Route::post('/license/register', [LicenseActivationController::class, 'register'])->name('license.register');
     Route::post('/license/validate', [LicenseActivationController::class, 'checkLicense'])->name('license.check');
 });
