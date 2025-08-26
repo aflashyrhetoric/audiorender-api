@@ -103,10 +103,6 @@ textarea {
         -webkit-text-fill-color: transparent;
     }
 
-    .text-main {
-        @apply text-gray-800;
-    }
-
     /*Multiple shades and colors*/
     .gradient-multi {
         background-color: hsla(0, 100%, 50%, 1);
