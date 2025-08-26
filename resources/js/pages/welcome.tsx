@@ -75,7 +75,7 @@ export default function Welcome() {
                         </div>
                         <div className={`mt-12 mb-16 flex flex-col items-center gap-5 md:flex-row md:items-start`}>
                             <div className={`flex-col justify-center`}>
-                                <a href={'https://files.audiorender.app/audiorender/AudioRender_0.1.0_aarch64.dmg'} download>
+                                <a href={'https://files.audiorender.app/audiorender/AudioRender_1.2.0_aarch64.dmg'} download>
                                     <Button
                                         className={`flex h-10 justify-between bg-white px-4 text-lg font-bold tracking-tight text-black hover:bg-neutral-600 hover:text-white lg:h-18 lg:px-10 lg:text-xl`}
                                     >
