@@ -9,11 +9,12 @@ const SiteFooter: React.FC<Props> = ({ className = '' }: Props) => {
         <>
             <>
                 <footer className={`w-full`}>
-                    <div className={`gradient-dark grid12 p-10 text-neutral-200`}>
+                    <div className={`gradient-dark grid12 p-2 lg:p-10 text-neutral-200`}>
                         <div className={`cs-12 lg:cs-4 space-y-5`}>
                             <p className={`text-sm font-bold`}>Developed with ❤️ and 🍜 by Kevin Oh</p>
                             <iframe
                                 width="380"
+                                className={`max-w-full`}
                                 height="38"
                                 style={{ border: 0 }}
                                 src="https://climate.stripe.com/badge/4t34HZ?theme=dark&size=small&locale=en-US"

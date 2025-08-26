@@ -109,7 +109,7 @@ export default function Welcome() {
                                 <span className={`mr-5 hidden text-5xl md:inline`}>
                                     <LuArrowBigDown className={`animate-bounce fill-white`} />
                                 </span>
-                                <span className={`font-inter text-4xl font-bold tracking-tight text-balance lg:text-4xl xl:text-5xl`}>
+                                <span className={`font-inter text-3xl font-bold tracking-tight text-balance md:text-3xl lg:text-4xl xl:text-5xl`}>
                                     See What You Can Make
                                 </span>
                                 <span className={`ml-5 hidden text-5xl md:inline`}>
@@ -152,8 +152,6 @@ export default function Welcome() {
                                 <div className="relative aspect-video w-full">
                                     <iframe
                                         className="absolute inset-0 h-full w-full"
-                                        width="560"
-                                        height="315"
                                         src="https://www.youtube.com/embed/4gLtEHcpM8Q?si=3tnyDfVZaqgiq2Ym"
                                         title="YouTube video player"
                                         frameBorder="0"
@@ -171,12 +169,10 @@ export default function Welcome() {
                     </div>
                     <div className={`grid12 mb-20 gap-y-12 lg:px-[12vw]`}>
                         <div className="tac cs-12 mb-20 bg-gray-900 py-5 md:bg-transparent">
-                            <h2 className={`mb-4`}>
-                                <span className={`font-inter text-2xl font-bold tracking-tight lg:text-4xl`}>
-                                    Use built-in templates to render with ease.
-                                </span>
+                            <h2 className={`font-inter mb-4 text-2xl font-bold tracking-tight text-balance lg:text-4xl`}>
+                                Use built-in templates to render with ease.
                             </h2>
-                            <p className={`ific font-inter text-xl`}>
+                            <p className={`text-balance flex-wrap max-w-full ific font-inter text-xl`}>
                                 {/*<span className={`mr-2`}>*/}
                                 {/*    <Checkmark size={'small'} />*/}
                                 {/*</span>*/}
@@ -191,8 +187,6 @@ export default function Welcome() {
                                 <div className="relative aspect-video w-full">
                                     <iframe
                                         className="absolute inset-0 h-full w-full"
-                                        width="560"
-                                        height="315"
                                         src="https://www.youtube.com/embed/3F4Z5xsaPEM"
                                         title="YouTube video player"
                                         frameBorder="0"
@@ -215,7 +209,6 @@ export default function Welcome() {
                                 <div className="relative aspect-video w-full">
                                     <iframe
                                         className="absolute inset-0 h-full w-full"
-                                        height="315"
                                         src="https://www.youtube.com/embed/WRw9w79ayfM?si=eNdxUkeTGdRvouyN"
                                         title="YouTube video player"
                                         frameBorder="0"
