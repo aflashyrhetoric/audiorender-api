@@ -58,13 +58,6 @@ textarea {
     @apply col-span-12;
 }
 
-@utility csr-12-6 {
-    @apply col-span-12 md:col-span-6;
-}
-
-@utility csr-12-6-4 {
-    @apply col-span-12 md:col-span-6 lg:col-span-4;
-}
 
 /* Note: this file is imported and used in `resources/css/app.css` */
 @layer components {
