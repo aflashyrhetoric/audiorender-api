@@ -19,6 +19,10 @@ const SiteFooter: React.FC<Props> = ({ className = '' }: Props) => {
                                 style={{ border: 0 }}
                                 src="https://climate.stripe.com/badge/4t34HZ?theme=dark&size=small&locale=en-US"
                             ></iframe>
+                            <a
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                className={`text-white underline`} href={"https://climate.stripe.com/q4qsIY"}>AudioRender 🤝 Stripe Climate</a>
                         </div>
                         <div className={`cs-12 lg:cs-8 font-inter font-medium text-sm py-5`}>
                             <ul className={`inline-flex gap-2 w-full flex-col justify-between`}>

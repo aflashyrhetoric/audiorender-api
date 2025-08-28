@@ -14,19 +14,24 @@ class LicenseActivationController extends Controller
         return LicenseActivation::all();
     }
 
+    // This is called when a user is trying to validate their email
     public function checkLicense(Request $request)
     {
         $data = $request->validate([
             'email' => ['required'],
+            'license_key' => ['required', 'string']
         ]);
 
         // Find a customer where the email matches and "license_key" is not null
-        $licenseActivation = Customer::where('email', $data['email'])
-            ->whereNotNull('license_key')
+        $customerWithLicense = Customer::where('email', $data['email'])
+            ->where('license_key', $data['license_key'])
             ->first();
 
-        if ($licenseActivation) {
-            return response()->json(['status' => 'active', 'activation' => $licenseActivation]);
+        if ($customerWithLicense) {
+            // Update the customer's 'device_activation_count' field
+            $customerWithLicense->device_activation_count += 1;
+            $customerWithLicense->save();
+            return response()->json(['status' => 'active', 'activation' => $customerWithLicense]);
         }
 
         return response()->json(['status' => 'inactive'], 404);

@@ -11,6 +11,8 @@ class Customer extends Model
         'stripe_customer_id',
         'email',
         'license_key',
+        'device_name',
+        'device_activation_count',
         'status',
     ];
 
