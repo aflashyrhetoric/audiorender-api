@@ -11,7 +11,6 @@ return new class extends Migration {
             // If the column exists
             if(Schema::hasColumn('customers', 'stripe_customer_id')) {
                 // Drop any foreign key constraints first
-                $table->dropForeign(['stripe_customer_id']);
                 $table->dropColumn('stripe_customer_id');
             }
         });
