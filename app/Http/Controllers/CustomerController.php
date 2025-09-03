@@ -15,7 +15,7 @@ class CustomerController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'stripe_customer_id' => ['required'],
+//            'stripe_customer_id' => ['required'],
             'email' => ['required', 'email', 'max:254'],
             'license_key' => ['required'],
             'status' => ['required'],
@@ -32,7 +32,7 @@ class CustomerController extends Controller
     public function update(Request $request, Customer $customer)
     {
         $data = $request->validate([
-            'stripe_customer_id' => ['required'],
+//            'stripe_customer_id' => ['required'],
             'email' => ['required', 'email', 'max:254'],
             'license_key' => ['required'],
             'status' => ['required'],

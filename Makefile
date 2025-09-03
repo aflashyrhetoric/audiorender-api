@@ -1,7 +1,10 @@
-.PHONY=webhook
+.PHONY=all migrate status rollback webhook trigger-charge trigger-fixtures
 
 migrate:
 	php artisan migrate
+
+status:
+	php artisan migrate:status
 
 # Rollbacks one migration
 rollback:
