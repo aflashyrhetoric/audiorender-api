@@ -24,6 +24,7 @@ export default function Welcome() {
                             <p className={`text-lg`}>
                                 Please check your email for your License Key and instructions on how to proceed with activation.
                             </p>
+                            <p className={`mt-4 text-neutral-300`}>If you do not see an e-mail, check your Spam or Junk folder.</p>
                         </div>
                         <p className={``}>Thank you for supporting AudioRender's development.</p>
                         <p className={`mt-5 mb-12`}>
