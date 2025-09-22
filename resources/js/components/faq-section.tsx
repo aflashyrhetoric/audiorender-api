@@ -9,15 +9,23 @@ const FAQSection: React.FC<Props> = ({ className = '' }: Props) => {
     const faqSections = [
         {
             title: 'What is AudioRender?',
-            text: "AudioRender is a macOS app that lets you drop in an MP3 file and create simple, upload-ready videos with waveforms and transcriptions in a few clicks."
+            text: 'AudioRender is a macOS app that lets you drop in an MP3 file and create simple, upload-ready videos with waveforms and transcriptions in a few clicks.',
+        },
+        {
+            title: 'Why is the first render so slow?',
+            text: 'Some things need to be downloaded and set up behind the scenes. They are essential to the core rendering functionality. You only need to do this once, and sometimes when you need a new version.',
+        },
+        {
+            title: "My first render isn't working.",
+            text: 'Please see the above FAQ item. If you do not have internet access, are on a VPN, or on a restricted network, it may fail. Please ensure you have a stable internet connection and try again. If it repeatedly fails, please try re-downloading the application and trying again. If it still fails, please contact our support at contact@audiorender.app.',
         },
         {
             title: 'Is there a free version?',
-            text: "The trial version is free, with some limitations. Audio file duration is limited to under 10 minutes. Only the static image + looping video configurations are enabled. Audiograms - including waveform and transcription - are not available. We hope this allows those with simpler use-cases to comfortable use AudioRender for free, while allowing us to support ourselves as a business.",
+            text: 'The trial version is free, with some limitations. Audio file duration is limited to under 10 minutes. Only the static image + looping video configurations are enabled. Audiograms - including waveform and transcription - are not available. We hope this allows those with simpler use-cases to comfortable use AudioRender for free, while allowing us to support ourselves as a business.',
         },
         {
             title: 'What comes with a premium license?',
-            text: "No limits. All current and future features will be unlocked. Audiogram-style videos will also be available. Audiograms let you select stylistic templates with waveforms and transcriptions embedded into the video.",
+            text: 'No limits. All current and future features will be unlocked. Audiogram-style videos will also be available. Audiograms let you select stylistic templates with waveforms and transcriptions embedded into the video.',
         },
         {
             title: 'How does this compare to ________?',
@@ -50,13 +58,15 @@ const FAQSection: React.FC<Props> = ({ className = '' }: Props) => {
                 <AccordionItem
                     value={section.title}
                     key={`faq-section-${section.title}`}
-                    className={`border-0 pr-4 transition-all hover:bg-neutral-800 hover:pl-4`}
+                    className={`border-0 pr-4 transition-all hover:bg-gray-800 hover:pl-4`}
                 >
                     <AccordionTrigger className={`font-inter text-xl lg:text-3xl`}>{section.title}</AccordionTrigger>
                     {section.content ? (
-                        <AccordionContent className={`font-inter rounded bg-neutral-800 p-10 text-lg lg:text-2xl`}>{section.content}</AccordionContent>
+                        <AccordionContent className={`font-inter rounded bg-transparent p-10 text-lg lg:text-2xl`}>
+                            {section.content}
+                        </AccordionContent>
                     ) : (
-                        <AccordionContent className={`font-inter rounded bg-neutral-800 p-10 py-4 pb-10 text-xl lg:text-2xl text-neutral-200`}>
+                        <AccordionContent className={`font-inter rounded p-10 py-4 pb-10 text-xl text-neutral-200 lg:text-2xl`}>
                             {section.text}
                         </AccordionContent>
                     )}

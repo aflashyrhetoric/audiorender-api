@@ -79,14 +79,14 @@ export default function Welcome() {
                                     <Button
                                         className={`flex h-10 justify-between bg-white px-4 text-lg font-bold tracking-tight text-black hover:bg-neutral-600 hover:text-white lg:h-18 lg:px-10 lg:text-xl`}
                                     >
-                                        <span>Download AudioRender</span>
+                                        <span>Download for macOS (M1, M2, etc)</span>
                                         <span>
                                             <DownloadIcon className={`ml-2 lg:!h-[200px] lg:!w-[32px]`} />
                                         </span>
                                     </Button>
                                 </a>
                                 <p className={`tac mt-4 text-xs text-neutral-200`}>Free for audio &lt; 10min</p>
-                                <p className={`tac mt-2 text-xs text-neutral-200`}>Apple Silicon Only.</p>
+                                <p className={`tac mt-2 text-xs text-neutral-200`}>Apple Silicon Only  </p>
                             </div>
                             <div className={`flex-col justify-center`}>
                                 <a href={route('checkout-page')} target="_blank" rel="noreferrer noopener">
