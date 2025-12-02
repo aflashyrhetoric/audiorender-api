@@ -2,7 +2,6 @@ import AppLogo from '@/components/app-logo';
 import { Button } from '@/components/ui/button';
 import { DownloadIcon } from '@/lib/icons';
 import { Head } from '@inertiajs/react';
-import { DotIcon } from 'lucide-react';
 // @ts-ignore
 import { Checkmark } from 'react-checkmark';
 import CountUp from 'react-countup';
@@ -24,10 +23,13 @@ import {
     LuImage,
     LuInfinity,
     LuLock,
+    LuMailQuestion,
+    LuMapPinned,
     LuRefreshCwOff,
     LuTabletSmartphone,
     LuVideo,
 } from 'react-icons/lu';
+import RoadmapSection from '@/components/roadmap-section';
 
 export default function Welcome() {
     const ref = useRef(null);
@@ -41,35 +43,41 @@ export default function Welcome() {
             </Head>
             <div className="gradient-dark flex flex-col items-center text-white">
                 <main>
-                    <div className={`fc min-h-[60vh] flex-col pt-24 lg:min-h-[95vh] xl:pt-32`}>
+                    <div className={`fc min-h-[60vh] flex-col pt-24 lg:min-h-[95vh] xl:pt-24`}>
                         <div className="fc flex-col p-6 pt-16 md:pt-6">
                             <AppLogo className={`size-32`} />
                             <h1 className="font-inter mt-4 text-[2rem] font-bold tracking-tight">AudioRender</h1>
                         </div>
                         <p className={`fic tac font-inter mt-10 gap-2 text-3xl font-bold tracking-tight text-balance md:text-4xl`}>
-                            Create upload-ready videos from mp3 files.
+                            Turn your MP3s into <span className={`clip-gradient-text`}>eye-catching</span> videos.
                         </p>
                         <div className={`fc mt-8 text-xl`}>
-                            <ul className={`flex w-[400px] flex-col items-start space-y-3 p-5 font-sans text-lg font-medium`}>
+                            <ul className={`flex w-[600px] flex-col items-start space-y-3 p-5 font-sans text-lg font-medium`}>
                                 <li className={`fic`}>
                                     <span className={`mr-4`}>
                                         <Checkmark size={'medium'} />{' '}
                                     </span>
-                                    <span className={`text-balance`}>Fully local. Hardware-accelerated.</span>
+                                    <span className={`text-balance`}>Turn your MP3s into shareable videos in a few minutes.</span>
                                 </li>
                                 <li className={`fic`}>
                                     <span className={`mr-4`}>
                                         {' '}
                                         <Checkmark size={'medium'} />{' '}
                                     </span>
-                                    <span className={`text-balance`}>Purchase once. No subscription.</span>
+                                    <span className={`text-balance`}>Bulk-friendly. Convert multiple files at once.</span>
                                 </li>
                                 <li className={`fic`}>
                                     <span className={`mr-4`}>
                                         {' '}
                                         <Checkmark size={'medium'} />{' '}
                                     </span>
-                                    <span className={`text-balance`}>Templates w/ captions & waveforms.</span>
+                                    <span className={`text-balance`}>Purchase once. No subscriptions.</span>
+                                </li>
+                                <li className={`fic`}>
+                                    <span className={`mr-4`}>
+                                        <Checkmark color="#220efb" size={'medium'} />{' '}
+                                    </span>
+                                    <span className={`text-balance`}>Upgrade for captions, waveforms, and custom templates.</span>
                                 </li>
                             </ul>
                         </div>
@@ -79,14 +87,16 @@ export default function Welcome() {
                                     <Button
                                         className={`flex h-10 justify-between bg-white px-4 text-lg font-bold tracking-tight text-black hover:bg-neutral-600 hover:text-white lg:h-18 lg:px-10 lg:text-xl`}
                                     >
-                                        <span>Download for macOS (M1, M2, etc)</span>
+                                        <span>
+                                            Download Latest<span className="text-neutral-300">•</span>  i<span className="text-neutral-300">•</span> macOS
+                                        </span>
                                         <span>
                                             <DownloadIcon className={`ml-2 lg:!h-[200px] lg:!w-[32px]`} />
                                         </span>
                                     </Button>
                                 </a>
                                 <p className={`tac mt-4 text-xs text-neutral-200`}>Free for audio &lt; 10min</p>
-                                <p className={`tac mt-2 text-xs text-neutral-200`}>Apple Silicon Only  </p>
+                                <p className={`tac mt-2 text-xs text-neutral-200`}>M-Series Apple Silicon Only  </p>
                             </div>
                             <div className={`flex-col justify-center`}>
                                 <a href={route('checkout-page')} target="_blank" rel="noreferrer noopener">
@@ -94,14 +104,15 @@ export default function Welcome() {
                                         variant="default"
                                         className={`font-inter flex h-10 justify-between bg-blue-500 px-4 text-lg font-bold tracking-tight text-white hover:bg-blue-700 lg:h-18 lg:px-10 lg:text-2xl`}
                                     >
-                                        <span>
-                                            Buy Now <DotIcon className={`ific`} /> $15
-                                        </span>
+                                        <span>Buy Now • $15</span>
                                     </Button>
                                 </a>
                                 <p className={`tac mt-4 text-xs text-neutral-200`}>Payment through Stripe.</p>
                             </div>
                         </div>
+                    </div>
+                    <div className={`mb-20 gap-y-12 lg:gap-x-12 lg:px-[8vw]`}>
+                        <img src={'/img/audiorender-screenshot.png'} alt={'screenshot of the application showing the template editor'} />
                     </div>
                     <div className={`grid12 mt-12 mb-12 gap-8 lg:px-[12vw] xl:mt-16`}>
                         <div className="tac cs-12 mb-8">
@@ -167,12 +178,12 @@ export default function Welcome() {
                             />
                         </div>
                     </div>
-                    <div className={`grid12 mb-20 gap-y-12 lg:px-[12vw]`}>
-                        <div className="tac cs-12 mb-20 bg-gray-900 py-5 md:bg-transparent">
+                    <div className={`grid12 mb-20 gap-12 lg:px-[12vw]`}>
+                        <div className="tac cs-12 mb-12 bg-gray-900 py-5 md:bg-transparent">
                             <h2 className={`font-inter mb-4 text-2xl font-bold tracking-tight text-balance lg:text-4xl`}>
                                 Use built-in templates to render with ease.
                             </h2>
-                            <p className={`text-balance flex-wrap max-w-full ific font-inter text-xl`}>
+                            <p className={`ific font-inter max-w-full flex-wrap text-xl text-balance`}>
                                 {/*<span className={`mr-2`}>*/}
                                 {/*    <Checkmark size={'small'} />*/}
                                 {/*</span>*/}
@@ -229,33 +240,45 @@ export default function Welcome() {
                             <strong className={`font-bold`}>Privacy-first.</strong> <br />
                             Everything is processed and rendered locally.
                         </FeatureSquare>
-                        <FeatureSquare icon={<LuVideo className={`text-red-500`} />}>Robust rendering pipeline.</FeatureSquare>
-                        <FeatureSquare icon={<LuRefreshCwOff className={`text-orange-500`} />}>No monthly subscription.</FeatureSquare>
-                        <FeatureSquare icon={<LuInfinity className={`text-yellow-500`} />}>
-                            No usage caps or limits.<sup>*</sup>
+                        <FeatureSquare className={`lg:cs-6`} icon={<LuDroplets className={`text-pink-500`} />}>
+                            Create your own templates with a familiar drag-and-drop interface.
+                        </FeatureSquare>
+                        <FeatureSquare className={`lg:cs-6`} icon={<LuDroplets className={`text-pink-500`} />}>
+                            Create your own templates with a familiar drag-and-drop interface.
                         </FeatureSquare>
                         <FeatureSquare icon={<LuCaptions className={`text-green-500`} />}>
-                            Caption generation. Fully local.<sup>**</sup>
+                            Generate captions easily.<sup>**</sup>
+                        </FeatureSquare>
+                        <FeatureSquare className={`lg:cs-6`} icon={<LuVideo className={`text-red-500`} />}>
+                            Robust rendering pipeline built atop an ironclad foundation of industry standard tools like FFmpeg, Remotion, and
+                            WhisperCPP.
+                        </FeatureSquare>
+                        <FeatureSquare icon={<LuRefreshCwOff className={`text-orange-500`} />}>No monthly subscription. Because ew.</FeatureSquare>
+                        <FeatureSquare icon={<LuInfinity className={`text-yellow-500`} />}>
+                            No usage caps or limits.<sup>*</sup>
                         </FeatureSquare>
                         <FeatureSquare icon={<LuTabletSmartphone className={`text-blue-500`} />}>
                             Landscape, square, and portrait Aspect Ratios supported.
                         </FeatureSquare>
                         <FeatureSquare icon={<LuAudioWaveform className={`text-indigo-500`} />}>
-                            Responsive audio waveform animations.<sup>**</sup>
+                            Customizable audio waveform animations.<sup>***</sup>
                         </FeatureSquare>
                         <FeatureSquare icon={<LuFeather className={`text-violet-500`} />}>
                             Basic brand asset integration.<sup>**</sup>
                         </FeatureSquare>
-                        <FeatureSquare icon={<LuDroplets className={`text-pink-500`} />}>Preset color-schemes available.</FeatureSquare>
 
                         <div className="cs-12 px-4">
                             <p className={`text-xs text-gray-400`}>* For premium users.</p>
-                            <p className={`text-xs text-gray-400`}>** For premium users using the audiogram templates.</p>
+                            <p className={`text-xs text-gray-400`}>** For premium users using the audiogram templates or custom templates.</p>
+                            <p className={`text-xs text-gray-400`}>** For premium users using custom templates.</p>
                         </div>
                     </div>
                     <div className={`mt-10 w-full lg:px-[12vw]`}>
-                        <h2 className={`tac mb-5`}>
-                            <span className={`font-inter text-2xl font-bold tracking-tight lg:text-4xl`}>60-Second Demo</span>
+                        <h2 className={`tac mb-8`}>
+                            <span className={`font-inter text-2xl font-bold tracking-tight lg:text-4xl`}>sixty second demo</span>
+                        </h2>
+                        <h2 className={`tac mb-8`}>
+                            <p className={`font-inter text-lg font-bold tracking-tight lg:text-xl`}></p>
                         </h2>
                         <div className="mx-auto w-full max-w-4xl lg:max-w-6xl xl:max-w-7xl">
                             <div className="relative w-full" style={{ paddingTop: '56.25%' }}>
@@ -309,10 +332,19 @@ export default function Welcome() {
                         </p>
                     </div>
                     <div className={`mt-24 px-4 lg:px-[12vw]`}>
-                        <h2 className={`mb-5`}>
+                        <h2 className={`mb-5 ific text-cyan-400 gap-x-2`}>
+                            <span className={`text-4xl`}><LuMailQuestion /></span>
                             <span className={`font-inter text-4xl font-bold tracking-tight`}>Questions & Answers</span>
                         </h2>
                         <FAQSection />
+                    </div>
+                    <div className={`mt-24 px-4 lg:px-[12vw]`}>
+                        <h2 className={`mb-5 ific text-green-400 gap-x-2`}>
+                            <span className={`text-4xl`}><LuMapPinned /></span>
+                            <span className={`font-inter text-4xl font-bold tracking-tight`}>Feature Roadmap</span>
+                        </h2>
+                        <p className={`mt-2 text-lg tracking-tight mb-4`}></p>
+                        <RoadmapSection />
                     </div>
                 </main>
                 <div className="hidden h-16 lg:block"></div>

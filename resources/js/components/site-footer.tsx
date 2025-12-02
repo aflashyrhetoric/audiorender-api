@@ -9,7 +9,7 @@ const SiteFooter: React.FC<Props> = ({ className = '' }: Props) => {
         <>
             <>
                 <footer className={`w-full`}>
-                    <div className={`gradient-dark grid12 p-2 lg:p-10 text-neutral-200`}>
+                    <div className={`bg-gray-800 grid12 p-2 lg:p-10 text-neutral-200`}>
                         <div className={`cs-12 lg:cs-4 space-y-5`}>
                             <p className={`text-sm font-bold`}>Developed with ❤️ and 🍜 by Kevin Oh</p>
                             <iframe

@@ -1,10 +1,13 @@
-.PHONY=all migrate status rollback webhook trigger-charge trigger-fixtures
+.PHONY=all migrate status rollback webhook trigger-charge trigger-fixtures random-code
 
 migrate:
 	php artisan migrate
 
 status:
 	php artisan migrate:status
+
+random-code:
+	@zsh -c 'LC_ALL=C tr -dc "A-Z0-9" < /dev/urandom | head -c 20; echo'
 
 # Rollbacks one migration
 rollback:
