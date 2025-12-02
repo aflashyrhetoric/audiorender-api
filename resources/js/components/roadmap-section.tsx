@@ -16,7 +16,7 @@ const Roadmap: React.FC<Props> = ({ className = '' }: Props) => {
     const roadmapItems: RoadmapItem[] = [
         {
             intendedReleaseVersion: '1.5 or 1.6',
-            feature: 'Word-level caption-timing',
+            feature: 'Word-level caption generation',
             description:
                 'Captions are currently timestamp-based. Using deeper VAD (Voice Activity Detection), we can achieve true word-level captions.',
         },
@@ -40,6 +40,16 @@ const Roadmap: React.FC<Props> = ({ className = '' }: Props) => {
             intendedReleaseVersion: '1.9',
             feature: 'Free tier value adjustment',
             description: 'As we add new features, we will adjust the free tier to include access to more features.',
+        },
+        {
+            intendedReleaseVersion: '1.9',
+            feature: 'Custom font support',
+            description: 'Provide your own fonts to use in templates for greater brand consistency.',
+        },
+        {
+            intendedReleaseVersion: '2.0',
+            feature: 'Extended template editor',
+            description: 'Access to stickers, photos, shapes, and more within the template editor.',
         },
     ];
     return (

@@ -8,6 +8,7 @@ import CountUp from 'react-countup';
 import { FaYoutube } from 'react-icons/fa6';
 
 import FAQSection from '@/components/faq-section';
+import RoadmapSection from '@/components/roadmap-section';
 import SiteFooter from '@/components/site-footer';
 import FeatureSquare from '@/pages/feature-square';
 import VideoHeading from '@/pages/partials/video-heading';
@@ -20,16 +21,18 @@ import {
     LuCaptions,
     LuDroplets,
     LuFeather,
+    LuHandHelping,
     LuImage,
     LuInfinity,
+    LuLeaf,
     LuLock,
+    LuMail,
     LuMailQuestion,
     LuMapPinned,
     LuRefreshCwOff,
     LuTabletSmartphone,
     LuVideo,
 } from 'react-icons/lu';
-import RoadmapSection from '@/components/roadmap-section';
 
 export default function Welcome() {
     const ref = useRef(null);
@@ -85,29 +88,33 @@ export default function Welcome() {
                             <div className={`flex-col justify-center`}>
                                 <a href={'https://files.audiorender.app/audiorender/AudioRender_1.2.0_aarch64.dmg'} download>
                                     <Button
-                                        className={`flex h-10 justify-between bg-white px-4 text-lg font-bold tracking-tight text-black hover:bg-neutral-600 hover:text-white lg:h-18 lg:px-10 lg:text-xl`}
+                                        className={`flex h-10 cursor-pointer justify-between bg-white px-4 text-lg font-bold tracking-tight text-black hover:bg-neutral-800 hover:text-white lg:h-18 lg:px-10 lg:text-xl`}
                                     >
                                         <span>
-                                            Download Latest<span className="text-neutral-300">•</span>  i<span className="text-neutral-300">•</span> macOS
+                                            <span className={`underline`}>Download Latest - v1.4</span>
                                         </span>
                                         <span>
                                             <DownloadIcon className={`ml-2 lg:!h-[200px] lg:!w-[32px]`} />
                                         </span>
                                     </Button>
                                 </a>
-                                <p className={`tac mt-4 text-xs text-neutral-200`}>Free for audio &lt; 10min</p>
+                                <p className={`tac mt-4 text-xs text-neutral-200`}>Free for audio &lt; 10min.</p>
+                                <p className={`tac mt-2 text-xs text-neutral-200`}>Certain features require premium.</p>
                                 <p className={`tac mt-2 text-xs text-neutral-200`}>M-Series Apple Silicon Only  </p>
                             </div>
                             <div className={`flex-col justify-center`}>
                                 <a href={route('checkout-page')} target="_blank" rel="noreferrer noopener">
                                     <Button
                                         variant="default"
-                                        className={`font-inter flex h-10 justify-between bg-blue-500 px-4 text-lg font-bold tracking-tight text-white hover:bg-blue-700 lg:h-18 lg:px-10 lg:text-2xl`}
+                                        className={`font-inter flex h-10 cursor-pointer justify-between bg-blue-700 px-4 text-lg font-bold tracking-tight text-white hover:bg-blue-800 lg:h-18 lg:px-10 lg:text-2xl`}
                                     >
                                         <span>Buy Now • $15</span>
                                     </Button>
                                 </a>
-                                <p className={`tac mt-4 text-xs text-neutral-200`}>Payment through Stripe.</p>
+                                <p className={`ific mt-4 w-full justify-center gap-x-1 text-xs text-neutral-200`}>
+                                    <LuLock />
+                                    Secure payment through Stripe.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -236,36 +243,39 @@ export default function Welcome() {
                         </div>
                     </div>
                     <div className={`grid12 mb-20 gap-4 p-4 lg:px-[12vw]`}>
-                        <FeatureSquare className={`cs-12 lg:cs-12`} icon={<LuLock className={`text-white`} />}>
-                            <strong className={`font-bold`}>Privacy-first.</strong> <br />
-                            Everything is processed and rendered locally.
-                        </FeatureSquare>
-                        <FeatureSquare className={`lg:cs-6`} icon={<LuDroplets className={`text-pink-500`} />}>
-                            Create your own templates with a familiar drag-and-drop interface.
-                        </FeatureSquare>
-                        <FeatureSquare className={`lg:cs-6`} icon={<LuDroplets className={`text-pink-500`} />}>
-                            Create your own templates with a familiar drag-and-drop interface.
-                        </FeatureSquare>
-                        <FeatureSquare icon={<LuCaptions className={`text-green-500`} />}>
+                        <FeatureSquare icon={<LuRefreshCwOff className={`text-orange-500`} />}>No monthly subscription.</FeatureSquare>
+                        <FeatureSquare icon={<LuCaptions className={`text-neutral-200`} />}>
                             Generate captions easily.<sup>**</sup>
+                        </FeatureSquare>
+                        <FeatureSquare icon={<LuInfinity className={`text-yellow-500`} />}>
+                            No usage caps or limits.<sup>*</sup>
+                        </FeatureSquare>
+                        <FeatureSquare className={`lg:cs-3`} icon={<LuLeaf className={`text-green-500`} />}>
+                            1% of purchases contribute to support carbon removal technologies
+                        </FeatureSquare>
+                        <FeatureSquare className={`lg:cs-4`} icon={<LuTabletSmartphone className={`text-blue-500`} />}>
+                            Landscape. Square. Portrait. All supported.
+                        </FeatureSquare>
+                        <FeatureSquare className={`lg:cs-4`} icon={<LuAudioWaveform className={`text-indigo-500`} />}>
+                            Customizable waveform animations.<sup>***</sup>
+                        </FeatureSquare>
+                        <FeatureSquare className={`lg:cs-4`} icon={<LuFeather className={`text-violet-500`} />}>
+                            Basic brand asset integration.<sup>**</sup>
                         </FeatureSquare>
                         <FeatureSquare className={`lg:cs-6`} icon={<LuVideo className={`text-red-500`} />}>
                             Robust rendering pipeline built atop an ironclad foundation of industry standard tools like FFmpeg, Remotion, and
                             WhisperCPP.
                         </FeatureSquare>
-                        <FeatureSquare icon={<LuRefreshCwOff className={`text-orange-500`} />}>No monthly subscription. Because ew.</FeatureSquare>
-                        <FeatureSquare icon={<LuInfinity className={`text-yellow-500`} />}>
-                            No usage caps or limits.<sup>*</sup>
+                        <FeatureSquare className={`lg:cs-6`} icon={<LuDroplets className={`text-cyan-500`} />}>
+                            Create your own templates with a familiar drag-and-drop interface.
                         </FeatureSquare>
-                        <FeatureSquare icon={<LuTabletSmartphone className={`text-blue-500`} />}>
-                            Landscape, square, and portrait Aspect Ratios supported.
+                        <FeatureSquare className={`cs-12 lg:cs-12`} icon={<LuLock className={`text-white`} />}>
+                            <strong className={`font-bold`}>Privacy-first.</strong> <br />
+                            Everything is processed and rendered locally.
                         </FeatureSquare>
-                        <FeatureSquare icon={<LuAudioWaveform className={`text-indigo-500`} />}>
-                            Customizable audio waveform animations.<sup>***</sup>
-                        </FeatureSquare>
-                        <FeatureSquare icon={<LuFeather className={`text-violet-500`} />}>
-                            Basic brand asset integration.<sup>**</sup>
-                        </FeatureSquare>
+                        {/*<FeatureSquare className={`lg:cs-3`} icon={<LuHandHeart className={`text-pink-400`} />}>*/}
+                        {/*    Support independent software development.*/}
+                        {/*</FeatureSquare>*/}
 
                         <div className="cs-12 px-4">
                             <p className={`text-xs text-gray-400`}>* For premium users.</p>
@@ -275,7 +285,7 @@ export default function Welcome() {
                     </div>
                     <div className={`mt-10 w-full lg:px-[12vw]`}>
                         <h2 className={`tac mb-8`}>
-                            <span className={`font-inter text-2xl font-bold tracking-tight lg:text-4xl`}>sixty second demo</span>
+                            <span className={`font-inter text-2xl font-bold tracking-tight lg:text-4xl`}>60-Second Demo ✌️</span>
                         </h2>
                         <h2 className={`tac mb-8`}>
                             <p className={`font-inter text-lg font-bold tracking-tight lg:text-xl`}></p>
@@ -332,19 +342,44 @@ export default function Welcome() {
                         </p>
                     </div>
                     <div className={`mt-24 px-4 lg:px-[12vw]`}>
-                        <h2 className={`mb-5 ific text-cyan-400 gap-x-2`}>
-                            <span className={`text-4xl`}><LuMailQuestion /></span>
-                            <span className={`font-inter text-4xl font-bold tracking-tight`}>Questions & Answers</span>
+                        <h2 className={`ific mb-5 gap-x-2 border-b border-b-cyan-400 text-cyan-400`}>
+                            <span className={`text-4xl`}>
+                                <LuMailQuestion />
+                            </span>
+                            <span className={`font-inter text-4xl font-bold tracking-tight`}>FAQ</span>
                         </h2>
+
                         <FAQSection />
                     </div>
                     <div className={`mt-24 px-4 lg:px-[12vw]`}>
-                        <h2 className={`mb-5 ific text-green-400 gap-x-2`}>
-                            <span className={`text-4xl`}><LuMapPinned /></span>
+                        <h2 className={`ific mb-5 gap-x-2 border-b border-b-green-400 text-green-400`}>
+                            <span className={`text-4xl`}>
+                                <LuMapPinned />
+                            </span>
                             <span className={`font-inter text-4xl font-bold tracking-tight`}>Feature Roadmap</span>
                         </h2>
-                        <p className={`mt-2 text-lg tracking-tight mb-4`}></p>
+                        <p className={`mb-5 text-lg tracking-tight`}>
+                            <span className={`font-bold`}>Upcoming Features.</span>{' '}
+                            <span className={`text-neutral-500`}>Plans may change without notice.</span>
+                        </p>
                         <RoadmapSection />
+                    </div>
+                    <div className={`mt-24 px-4 lg:px-[12vw]`}>
+                        <h2 className={`ific mb-5 gap-x-2 border-b border-b-pink-400 text-pink-400`}>
+                            <span className={`text-4xl`}>
+                                <LuHandHelping />
+                            </span>
+                            <span className={`font-inter text-4xl font-bold tracking-tight`}>Support</span>
+                        </h2>
+                        <p className={`mb-5 text-lg font-bold tracking-tight`}>
+                            Please feel free to reach out with questions, issues, refund requests, or feedback to our support e-mail below.
+                        </p>
+                        <p className={`text-2xl tracking-tight`}>
+                            <a className={`ific gap-x-2`} href={'mailto:contact@audiorender.app'}>
+                                <LuMail className={``}/>
+                                contact@audiorender.app
+                            </a>
+                        </p>
                     </div>
                 </main>
                 <div className="hidden h-16 lg:block"></div>
