@@ -1,7 +1,8 @@
+// This is old and unused but kept around to show how a carousel could be implemented.
 import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
-export function ScreenshotSlideshow() {
+export function ScreenshotCarousel() {
     return (
         <Carousel className="max-w w-full">
             <CarouselContent>

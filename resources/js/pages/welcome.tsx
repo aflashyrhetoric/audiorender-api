@@ -8,6 +8,7 @@ import CountUp from 'react-countup';
 import { FaYoutube } from 'react-icons/fa6';
 
 import FAQSection from '@/components/faq-section';
+import { ImagesSlideshow } from '@/components/marketing/images-slideshow';
 import RoadmapSection from '@/components/roadmap-section';
 import SiteFooter from '@/components/site-footer';
 import FeatureSquare from '@/pages/feature-square';
@@ -51,11 +52,14 @@ export default function Welcome() {
                             <AppLogo className={`size-32`} />
                             <h1 className="font-inter mt-4 text-[2rem] font-bold tracking-tight">AudioRender</h1>
                         </div>
-                        <p className={`fic tac font-inter mt-10 gap-2 text-3xl font-bold tracking-tight text-balance md:text-4xl`}>
+                        <p className={`hidden lg:fic tac font-inter mt-10 gap-2 text-3xl font-bold tracking-tight text-balance md:text-4xl`}>
                             Turn your MP3s into <span className={`clip-gradient-text`}>eye-catching</span> videos.
                         </p>
+                        <p className={`fic lg:hidden tac font-inter mt-10 gap-2 text-3xl font-bold tracking-tight text-balance md:text-4xl`}>
+                            Turn your MP3s into eye-catching videos.
+                        </p>
                         <div className={`fc mt-8 text-xl`}>
-                            <ul className={`flex w-[600px] flex-col items-start space-y-3 p-5 font-sans text-lg font-medium`}>
+                            <ul className={`flex w-full lg:w-[600px] flex-col items-center lg:items-start space-y-3 p-5 font-sans text-sm lg:text-lg font-medium`}>
                                 <li className={`fic`}>
                                     <span className={`mr-4`}>
                                         <Checkmark size={'medium'} />{' '}
@@ -78,7 +82,7 @@ export default function Welcome() {
                                 </li>
                                 <li className={`fic`}>
                                     <span className={`mr-4`}>
-                                        <Checkmark color="#220efb" size={'medium'} />{' '}
+                                        <Checkmark size={'medium'} />{' '}
                                     </span>
                                     <span className={`text-balance`}>Upgrade for captions, waveforms, and custom templates.</span>
                                 </li>
@@ -86,7 +90,7 @@ export default function Welcome() {
                         </div>
                         <div className={`mt-12 mb-16 flex flex-col items-center gap-5 md:flex-row md:items-start`}>
                             <div className={`flex-col justify-center`}>
-                                <a href={'https://files.audiorender.app/audiorender/AudioRender_1.2.0_aarch64.dmg'} download>
+                                <a href={'https://files.audiorender.app/audiorender/AudioRender_1.3.0_aarch64.dmg'} download>
                                     <Button
                                         className={`flex h-10 cursor-pointer justify-between bg-white px-4 text-lg font-bold tracking-tight text-black hover:bg-neutral-800 hover:text-white lg:h-18 lg:px-10 lg:text-xl`}
                                     >
@@ -119,7 +123,31 @@ export default function Welcome() {
                         </div>
                     </div>
                     <div className={`mb-20 gap-y-12 lg:gap-x-12 lg:px-[8vw]`}>
-                        <img src={'/img/audiorender-screenshot.png'} alt={'screenshot of the application showing the template editor'} />
+                        <ImagesSlideshow
+                            slides={[
+                                {
+                                    imageSrc: '/img/quick-create-start.png',
+                                    imageAlt: 'drag and drop MP3 files to start creating videos',
+                                    buttonText: 'Easy to Use',
+                                    caption: 'Drag and drop an MP3 file. Customize your video. Render!',
+                                    imageKey: 'easy-to-use',
+                                },
+                                {
+                                    imageSrc: '/img/quick-audiograms.png',
+                                    imageAlt: 'drag and drop MP3 files to start creating videos',
+                                    buttonText: 'Audiograms',
+                                    caption: 'Customize your audiograms with your desired aspect ratio, color scheme, and style.',
+                                    imageKey: 'quick-audiograms',
+                                },
+                                {
+                                    imageSrc: '/img/audiorender-screenshot.png',
+                                    imageAlt: 'screenshot of the application showing the template editor',
+                                    buttonText: 'Custom Templates',
+                                    caption: 'Need even more control? Create your own templates with our drag-and-drop editor.',
+                                    imageKey: 'template-editor',
+                                },
+                            ]}
+                        />
                     </div>
                     <div className={`grid12 mt-12 mb-12 gap-8 lg:px-[12vw] xl:mt-16`}>
                         <div className="tac cs-12 mb-8">
@@ -144,7 +172,7 @@ export default function Welcome() {
                                 <span className={`ml-3 text-2xl`}>Use A Looping Video</span>
                             </VideoHeading>
                             <div className="w-full">
-                                <div className="relative aspect-video w-full">
+                                <div className="relative aspect-video w-full max-w-screen">
                                     <iframe
                                         className="absolute inset-0 h-full w-full"
                                         src="https://www.youtube.com/embed/2fRIdQKfpyI?si=bOGOET44HZbBYvY9"
@@ -167,7 +195,7 @@ export default function Welcome() {
                                 <span className={`ml-3 text-2xl`}>Use An Image</span>
                             </VideoHeading>
                             <div className="w-full">
-                                <div className="relative aspect-video w-full">
+                                <div className="relative aspect-video w-full max-w-screen">
                                     <iframe
                                         className="absolute inset-0 h-full w-full"
                                         src="https://www.youtube.com/embed/4gLtEHcpM8Q?si=3tnyDfVZaqgiq2Ym"
@@ -185,8 +213,8 @@ export default function Welcome() {
                             />
                         </div>
                     </div>
-                    <div className={`grid12 mb-20 gap-12 lg:px-[12vw]`}>
-                        <div className="tac cs-12 mb-12 bg-gray-900 py-5 md:bg-transparent">
+                    <div className={`grid12 mb-20 gap-y-12 lg:px-[12vw]`}>
+                        <div className="tac cs-12 mb-12 bg-gray-900 py-5 md:bg-transparent max-w-screen">
                             <h2 className={`font-inter mb-4 text-2xl font-bold tracking-tight text-balance lg:text-4xl`}>
                                 Use built-in templates to render with ease.
                             </h2>
@@ -202,7 +230,7 @@ export default function Welcome() {
                                 <span className={`text-2xl`}>Flat Style - 1:1 Aspect Ratio</span>
                             </VideoHeading>
                             <div className="w-full">
-                                <div className="relative aspect-video w-full">
+                                <div className="relative aspect-video w-full max-w-screen">
                                     <iframe
                                         className="absolute inset-0 h-full w-full"
                                         src="https://www.youtube.com/embed/3F4Z5xsaPEM"
@@ -224,7 +252,7 @@ export default function Welcome() {
                                 <span className={`text-2xl`}>Card Style - 16:9 Aspect Ratio</span>
                             </VideoHeading>
                             <div className="w-full">
-                                <div className="relative aspect-video w-full">
+                                <div className="relative aspect-video w-full max-w-screen">
                                     <iframe
                                         className="absolute inset-0 h-full w-full"
                                         src="https://www.youtube.com/embed/WRw9w79ayfM?si=eNdxUkeTGdRvouyN"
@@ -291,7 +319,7 @@ export default function Welcome() {
                             <p className={`font-inter text-lg font-bold tracking-tight lg:text-xl`}></p>
                         </h2>
                         <div className="mx-auto w-full max-w-4xl lg:max-w-6xl xl:max-w-7xl">
-                            <div className="relative w-full" style={{ paddingTop: '56.25%' }}>
+                            <div className="relative aspect-video w-full max-w-screen" style={{ paddingTop: '56.25%' }}>
                                 <iframe
                                     src="https://customer-z7s53ua6boediiub.cloudflarestream.com/85e521b6ea231f858fd24127741b6e89/iframe?muted=true&autoplay=true&poster=https%3A%2F%2Fcustomer-z7s53ua6boediiub.cloudflarestream.com%2F85e521b6ea231f858fd24127741b6e89%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"
                                     loading="lazy"
@@ -364,7 +392,7 @@ export default function Welcome() {
                         </p>
                         <RoadmapSection />
                     </div>
-                    <div className={`mt-24 px-4 lg:px-[12vw]`}>
+                    <div className={`mt-12 lg:mt-24 mb-12 lg:mb-24 px-4 lg:px-[12vw]`}>
                         <h2 className={`ific mb-5 gap-x-2 border-b border-b-pink-400 text-pink-400`}>
                             <span className={`text-4xl`}>
                                 <LuHandHelping />
@@ -376,7 +404,7 @@ export default function Welcome() {
                         </p>
                         <p className={`text-2xl tracking-tight`}>
                             <a className={`ific gap-x-2`} href={'mailto:contact@audiorender.app'}>
-                                <LuMail className={``}/>
+                                <LuMail className={``} />
                                 contact@audiorender.app
                             </a>
                         </p>

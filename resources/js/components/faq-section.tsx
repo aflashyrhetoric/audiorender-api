@@ -66,7 +66,7 @@ const FAQSection: React.FC<Props> = ({ className = '' }: Props) => {
                             {section.content}
                         </AccordionContent>
                     ) : (
-                        <AccordionContent className={`font-inter rounded p-10 py-4 pb-10 text-xl text-neutral-200 lg:text-2xl`}>
+                        <AccordionContent className={`font-alegreya rounded p-8 py-4 pb-10 text-xl text-neutral-200 lg:text-2xl`}>
                             {section.text}
                         </AccordionContent>
                     )}
