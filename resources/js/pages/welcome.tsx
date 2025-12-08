@@ -9,6 +9,7 @@ import { FaYoutube } from 'react-icons/fa6';
 
 import FAQSection from '@/components/faq-section';
 import { ImagesSlideshow } from '@/components/marketing/images-slideshow';
+import PricingSection from '@/components/pricing-section';
 import RoadmapSection from '@/components/roadmap-section';
 import SiteFooter from '@/components/site-footer';
 import FeatureSquare from '@/pages/feature-square';
@@ -19,7 +20,9 @@ import { useRef } from 'react';
 import {
     LuArrowBigDown,
     LuAudioWaveform,
+    LuBanknote,
     LuCaptions,
+    LuDollarSign,
     LuDroplets,
     LuFeather,
     LuHandHelping,
@@ -43,7 +46,10 @@ export default function Welcome() {
         <>
             <Head title="AudioRender">
                 <link rel="preconnect" href="https://fonts.bunny.net" />
-                <link href="https://fonts.bunny.net/css?family=alegreya-sans:100,400,700,900|inter:400,500,600|amaranth:400,700" rel="stylesheet" />
+                <link
+                    href="https://fonts.bunny.net/css?family=alegreya-sans:100,400,700,900|inter:400,500,600,700|amaranth:400,700"
+                    rel="stylesheet"
+                />
             </Head>
             <div className="gradient-dark flex flex-col items-center text-white">
                 <main>
@@ -52,14 +58,16 @@ export default function Welcome() {
                             <AppLogo className={`size-32`} />
                             <h1 className="font-inter mt-4 text-[2rem] font-bold tracking-tight">AudioRender</h1>
                         </div>
-                        <p className={`hidden lg:fic tac font-inter mt-10 gap-2 text-3xl font-bold tracking-tight text-balance md:text-4xl`}>
+                        <p className={`lg:fic tac font-inter mt-10 hidden gap-2 text-3xl font-bold tracking-tight text-balance md:text-4xl`}>
                             Turn your MP3s into <span className={`clip-gradient-text`}>eye-catching</span> videos.
                         </p>
-                        <p className={`fic lg:hidden tac font-inter mt-10 gap-2 text-3xl font-bold tracking-tight text-balance md:text-4xl`}>
+                        <p className={`fic tac font-inter mt-10 gap-2 text-3xl font-bold tracking-tight text-balance md:text-4xl lg:hidden`}>
                             Turn your MP3s into eye-catching videos.
                         </p>
                         <div className={`fc mt-8 text-xl`}>
-                            <ul className={`flex w-full lg:w-[600px] flex-col items-center lg:items-start space-y-3 p-5 font-sans text-sm lg:text-lg font-medium`}>
+                            <ul
+                                className={`flex w-full flex-col items-center space-y-3 p-5 font-sans text-sm font-medium lg:w-[600px] lg:items-start lg:text-lg`}
+                            >
                                 <li className={`fic`}>
                                     <span className={`mr-4`}>
                                         <Checkmark size={'medium'} />{' '}
@@ -122,6 +130,49 @@ export default function Welcome() {
                             </div>
                         </div>
                     </div>
+                    <div className={`bg-black mb-20 gap-y-12 fc h-[50vh] lg:gap-x-12 lg:px-[8vw]`}>
+                        <div className={``}>
+                            <p className={`font-inter tac mb-6 text-5xl font-bold tracking-tight text-neutral-200`}>Let your voice be <span
+                                className="clip-gradient-text">seen</span>.</p>
+                            <div className={`flex flex-col gap-y-4 text-lg text-neutral-400`}>
+                                <p className={`tac font-inter text-xl font-bold tracking-tight`}>
+                                    Videos have higher engagement and reach wider audiences than audio alone.
+                                </p>
+                                <p className={`tac font-inter text-xl tracking-tight`}>
+                                    AudioRender makes it <span className={`font-bold`}>easy</span> to bridge the gap.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={`mt-10 mb-20 w-full lg:px-[12vw]`}>
+                        <h2 className={`tac mb-8`}>
+                            <span className={`font-inter text-2xl font-bold tracking-tight lg:text-4xl`}>60-Second Demo ✌️</span>
+                        </h2>
+                        <h2 className={`tac mb-8`}>
+                            <p className={`font-inter text-lg font-bold tracking-tight lg:text-xl`}></p>
+                        </h2>
+                        <div className="mx-auto w-full max-w-4xl lg:max-w-6xl xl:max-w-7xl">
+                            <div className="relative aspect-video w-full max-w-screen" style={{ paddingTop: '56.25%' }}>
+                                <iframe
+                                    src="https://customer-z7s53ua6boediiub.cloudflarestream.com/85e521b6ea231f858fd24127741b6e89/iframe?muted=true&autoplay=true&poster=https%3A%2F%2Fcustomer-z7s53ua6boediiub.cloudflarestream.com%2F85e521b6ea231f858fd24127741b6e89%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"
+                                    loading="lazy"
+                                    className="absolute inset-0 h-full w-full border-0"
+                                    allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                                    allowFullScreen
+                                ></iframe>
+                                {/*<iframe*/}
+                                {/*    className="absolute inset-0 h-full w-full"*/}
+                                {/*    src="https://www.youtube-nocookie.com/embed/sI1n3tmD6l8?si=SxKUdMSrhMlohRZp&amp;controls=0"*/}
+                                {/*    title="YouTube video player"*/}
+                                {/*    frameBorder="0"*/}
+                                {/*    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"*/}
+                                {/*    referrerPolicy="strict-origin-when-cross-origin"*/}
+                                {/*    allowFullScreen*/}
+                                {/*></iframe>*/}
+                            </div>
+                        </div>
+                        {/*<ScreenshotSlideshow />*/}
+                    </div>
                     <div className={`mb-20 gap-y-12 lg:gap-x-12 lg:px-[8vw]`}>
                         <ImagesSlideshow
                             slides={[
@@ -162,7 +213,10 @@ export default function Welcome() {
                                     <LuArrowBigDown className={`animate-bounce fill-white`} />
                                 </span>
                             </h2>
-                            <p className={`font-inter text-xl text-balance`}>Check out what you can make with AudioRender.</p>
+                            <p className={`font-inter mb-2 text-xl text-balance`}>Below are some examples of videos created with AudioRender.*</p>
+                            <p className={`text-xs text-balance text-white/50`}>
+                                * Some designs were done in other programs and imported into AudioRender for rendering.
+                            </p>
                         </div>
                     </div>
                     <div className={`grid12 mb-20 gap-y-12 lg:gap-x-12 lg:px-[8vw] xl:mb-32`}>
@@ -213,8 +267,8 @@ export default function Welcome() {
                             />
                         </div>
                     </div>
-                    <div className={`grid12 mb-20 gap-y-12 lg:px-[12vw]`}>
-                        <div className="tac cs-12 mb-12 bg-gray-900 py-5 md:bg-transparent max-w-screen">
+                    <div className={`grid12 mb-20 gap-12 lg:px-[12vw]`}>
+                        <div className="tac cs-12 max-w-screen bg-gray-900 py-5 md:bg-transparent">
                             <h2 className={`font-inter mb-4 text-2xl font-bold tracking-tight text-balance lg:text-4xl`}>
                                 Use built-in templates to render with ease.
                             </h2>
@@ -243,7 +297,7 @@ export default function Welcome() {
                                 </div>
                             </div>
                             <VideoLabel
-                                text={'Use a PNG to create branded video backgrounds'}
+                                text={'Our flat style template - simple and easy.'}
                                 additionalTags={['Captions', 'Waveforms', 'Multiple Aspect Ratios', 'Metadata-Friendly']}
                             />
                         </div>
@@ -265,7 +319,7 @@ export default function Welcome() {
                                 </div>
                             </div>
                             <VideoLabel
-                                text={'Generate videos in seconds - just add audio.'}
+                                text={'The card style template - sleek and modern.'}
                                 additionalTags={['Captions', 'Waveforms', 'Multiple Aspect Ratios', 'Uses Brand Logo']}
                             />
                         </div>
@@ -311,35 +365,6 @@ export default function Welcome() {
                             <p className={`text-xs text-gray-400`}>** For premium users using custom templates.</p>
                         </div>
                     </div>
-                    <div className={`mt-10 w-full lg:px-[12vw]`}>
-                        <h2 className={`tac mb-8`}>
-                            <span className={`font-inter text-2xl font-bold tracking-tight lg:text-4xl`}>60-Second Demo ✌️</span>
-                        </h2>
-                        <h2 className={`tac mb-8`}>
-                            <p className={`font-inter text-lg font-bold tracking-tight lg:text-xl`}></p>
-                        </h2>
-                        <div className="mx-auto w-full max-w-4xl lg:max-w-6xl xl:max-w-7xl">
-                            <div className="relative aspect-video w-full max-w-screen" style={{ paddingTop: '56.25%' }}>
-                                <iframe
-                                    src="https://customer-z7s53ua6boediiub.cloudflarestream.com/85e521b6ea231f858fd24127741b6e89/iframe?muted=true&autoplay=true&poster=https%3A%2F%2Fcustomer-z7s53ua6boediiub.cloudflarestream.com%2F85e521b6ea231f858fd24127741b6e89%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"
-                                    loading="lazy"
-                                    className="absolute inset-0 h-full w-full border-0"
-                                    allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-                                    allowFullScreen
-                                ></iframe>
-                                {/*<iframe*/}
-                                {/*    className="absolute inset-0 h-full w-full"*/}
-                                {/*    src="https://www.youtube-nocookie.com/embed/sI1n3tmD6l8?si=SxKUdMSrhMlohRZp&amp;controls=0"*/}
-                                {/*    title="YouTube video player"*/}
-                                {/*    frameBorder="0"*/}
-                                {/*    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"*/}
-                                {/*    referrerPolicy="strict-origin-when-cross-origin"*/}
-                                {/*    allowFullScreen*/}
-                                {/*></iframe>*/}
-                            </div>
-                        </div>
-                        {/*<ScreenshotSlideshow />*/}
-                    </div>
 
                     <div className={`mt-8 w-full px-4 tracking-tight lg:px-[12vw] xl:mt-16`}>
                         <p className={`font-inter text-2xl font-bold lg:text-6xl`} ref={ref}>
@@ -366,11 +391,22 @@ export default function Welcome() {
                         </p>
                         <p className={`font-inter mt-8 text-xl text-neutral-100 lg:text-2xl`}>That&apos;s almost 10x higher than Spotify.</p>
                         <p className={`font-inter mt-6 text-2xl text-neutral-400`}>
-                            AudioRender makes it easy to turn your backlog of mp3's into upload-ready video files.
+                            AudioRender makes it easy to turn your backlog of MP3s into upload-ready video files.
                         </p>
                     </div>
+
+                    <div className={`mt-24 px-4 lg:px-[12vw] py-10`}>
+                        <h2 className={`tac mb-4 gap-x-2 border-b-cyan-400 text-cyan-400`}>
+                            <span className={`font-inter text-4xl font-bold tracking-tight`}>Pricing</span>
+                        </h2>
+                        <p className={`tac mb-10`}>
+                            <span className={`font-bold`}>Processed via Stripe.</span>{' '}
+                            <span className={`text-neutral-500`}>One-time payment. No subscriptions. No hidden fees.</span>
+                        </p>
+                        <PricingSection />
+                    </div>
                     <div className={`mt-24 px-4 lg:px-[12vw]`}>
-                        <h2 className={`ific mb-5 gap-x-2 border-b border-b-cyan-400 text-cyan-400`}>
+                        <h2 className={`ific mb-5 gap-x-2 border-b border-b-indigo-400 text-indigo-400`}>
                             <span className={`text-4xl`}>
                                 <LuMailQuestion />
                             </span>
@@ -392,7 +428,7 @@ export default function Welcome() {
                         </p>
                         <RoadmapSection />
                     </div>
-                    <div className={`mt-12 lg:mt-24 mb-12 lg:mb-24 px-4 lg:px-[12vw]`}>
+                    <div className={`mt-12 mb-12 px-4 lg:mt-24 lg:mb-24 lg:px-[12vw]`}>
                         <h2 className={`ific mb-5 gap-x-2 border-b border-b-pink-400 text-pink-400`}>
                             <span className={`text-4xl`}>
                                 <LuHandHelping />

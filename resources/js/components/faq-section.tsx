@@ -25,11 +25,11 @@ const FAQSection: React.FC<Props> = ({ className = '' }: Props) => {
         },
         {
             title: 'What comes with a premium license?',
-            text: 'No limits. All current and future features will be unlocked. Audiogram-style videos will also be available. Audiograms let you select stylistic templates with waveforms and transcriptions embedded into the video.',
+            text: 'No limits. All current and future features will be unlocked. Audiogram-style videos will be unlocked, granting access to templates with waveforms and caption support. Custom templates are also unlocked, letting you build your own templates from scratch.',
         },
         {
             title: 'How does this compare to ________?',
-            text: "AudioRender is a macOS app with a one-time payment. A paid license means no usage limits, no monthly costs, and no privacy concerns. We also make a deliberate trade-off: convention over configuration. If you're looking for fully-fledged video compositing software that lets you tweak your video to perfection, AudioRender is definitely not for you. However, if you're looking for a simple, reliable way to convert hours of audio into great-looking videos with some simple branding and preset customization options, AudioRender is happy to serve. 😎",
+            text: "First, this is not another subscription - AudioRender is a macOS app with a free tier. Premium features are unlocked with a one-time payment. We also prioritize ease-of-use. If you're looking for fully-fledged video compositing software that lets you tweak your video to pixel-perfect perfection with blend modes and layering, AudioRender is probably not for you. Of course, we do have a template editor that lets you customize some things to fit your exporting needs and branding. However, if you're looking for a simple, reliable way to convert hours of audio into great-looking videos without too much hassle, AudioRender is going to be an excellent fit into your workflow. 😎",
         },
         {
             title: 'Is this private? How does my data get used?',
@@ -41,7 +41,7 @@ const FAQSection: React.FC<Props> = ({ className = '' }: Props) => {
         },
         {
             title: 'Is there a version for Intel Macs? Or Windows / Linux?',
-            text: "No. We currently have no plans to expand to other platforms as of now because of limited resources, but we've selected our technology stack to be relatively compatible with other architectures if there is a demand. Please let us know if you'd like to see a version for your platform by contacting us.",
+            text: "No. We currently have no plans to expand to other platforms as of now. Please let us know if you'd like to see a version for your platform by contacting us.",
         },
         {
             title: 'Are there educational discounts?',
@@ -49,7 +49,7 @@ const FAQSection: React.FC<Props> = ({ className = '' }: Props) => {
         },
         {
             title: 'How can I contact customer support?',
-            text: 'Send us an email at contact@audiorender.app. Premium users will receive priority support.',
+            text: 'Send us an email at contact@audiorender.app.',
         },
     ];
     return (
