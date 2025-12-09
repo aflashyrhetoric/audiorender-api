@@ -39,7 +39,7 @@ const Pricing: React.FC<Props> = ({ className = '' }: Props) => {
                             className={`flex h-10 w-full cursor-pointer justify-between bg-white px-4 text-lg font-bold tracking-tight text-black hover:bg-neutral-800 hover:text-white lg:h-18 lg:px-10 lg:text-xl`}
                         >
                             <span>
-                                <span className={`underline`}>Download Latest - v1.4</span>
+                                <span className={`underline`}>Download Latest - v1.3</span>
                             </span>
                             <span>
                                 <DownloadIcon className={`ml-2 lg:!h-[200px] lg:!w-[32px]`} />

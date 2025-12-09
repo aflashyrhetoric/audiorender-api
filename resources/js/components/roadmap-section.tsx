@@ -18,11 +18,11 @@ const Roadmap: React.FC<Props> = ({ className = "" }: Props) => {
 			intendedReleaseVersion: "1.4",
 			feature: "Word-level caption generation",
 			description:
-				"Captions are currently timestamp-based. Using deeper VAD (Voice Activity Detection), we can achieve true word-level captions.",
+				"Captions are currently timestamp-based. Using advanced VAD (Voice Activity Detection), we can achieve true word-level captions.",
 		},
 		{
 			intendedReleaseVersion: "1.5",
-			feature: "Premade templates",
+			feature: "A suite of premade templates",
 			description:
 				"While we already have 3 simple Audiogram Templates, a wider selection for common use-cases will make video creation even easier.",
 		},
@@ -56,13 +56,25 @@ const Roadmap: React.FC<Props> = ({ className = "" }: Props) => {
 			description:
 				"Access to stickers, photos, shapes, and more within the template editor.",
 		},
+        {
+            intendedReleaseVersion: "2.1",
+            feature: "Windows build",
+            description:
+                "A build to support users on Windows machines. (Currently we only support M-Series Macs)",
+        },
+        {
+            intendedReleaseVersion: "2.2",
+            feature: "Performance pass",
+            description:
+                "Deep performance optimizations to make video rendering even faster.",
+        },
 	];
 	return (
 		<div className={`grid12 gap-4 lg:gap-8`}>
 			{roadmapItems.map((section, index) => (
 				<div
 					key={`roadmap-item-${section.feature}`}
-					className={`cs-12 md:cs-6 lg:cs-4 border border-neutral-300/30 hover:border-purple-500 p-5`}
+					className={`cs-12 md:cs-6 lg:cs-4 border border-neutral-300/30 hover:border-green-500 p-5`}
 				>
 					<span
 						className={`ific font-inter text-xl lg:text-2xl tracking-tight font-bold`}

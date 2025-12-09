@@ -9,6 +9,7 @@ import { FaYoutube } from 'react-icons/fa6';
 
 import FAQSection from '@/components/faq-section';
 import { ImagesSlideshow } from '@/components/marketing/images-slideshow';
+import PatchNotes from '@/components/patch-notes-section';
 import PricingSection from '@/components/pricing-section';
 import RoadmapSection from '@/components/roadmap-section';
 import SiteFooter from '@/components/site-footer';
@@ -20,11 +21,10 @@ import { useRef } from 'react';
 import {
     LuArrowBigDown,
     LuAudioWaveform,
-    LuBanknote,
     LuCaptions,
-    LuDollarSign,
     LuDroplets,
     LuFeather,
+    LuGitCompare,
     LuHandHelping,
     LuImage,
     LuInfinity,
@@ -53,15 +53,15 @@ export default function Welcome() {
             </Head>
             <div className="gradient-dark flex flex-col items-center text-white">
                 <main>
-                    <div className={`fc min-h-[60vh] flex-col pt-24 lg:min-h-[95vh] xl:pt-24`}>
+                    <div className={`fc min-h-[60vh] flex-col pt-0 lg:min-h-[95vh] xl:pt-24`}>
                         <div className="fc flex-col p-6 pt-16 md:pt-6">
                             <AppLogo className={`size-32`} />
-                            <h1 className="font-inter mt-4 text-[2rem] font-bold tracking-tight">AudioRender</h1>
+                            <h1 className="font-inter mt-4 text-[1.5rem] font-bold tracking-tight xl:text-[2rem]">AudioRender</h1>
                         </div>
                         <p className={`lg:fic tac font-inter mt-10 hidden gap-2 text-3xl font-bold tracking-tight text-balance md:text-4xl`}>
                             Turn your MP3s into <span className={`clip-gradient-text`}>eye-catching</span> videos.
                         </p>
-                        <p className={`fic tac font-inter mt-10 gap-2 text-3xl font-bold tracking-tight text-balance md:text-4xl lg:hidden`}>
+                        <p className={`fic tac font-inter mt-10 gap-2 text-xl font-bold tracking-tight text-balance md:text-4xl lg:hidden`}>
                             Turn your MP3s into eye-catching videos.
                         </p>
                         <div className={`fc mt-8 text-xl`}>
@@ -97,24 +97,24 @@ export default function Welcome() {
                             </ul>
                         </div>
                         <div className={`mt-12 mb-16 flex flex-col items-center gap-5 md:flex-row md:items-start`}>
-                            <div className={`flex-col justify-center`}>
+                            <div className={`mb-5 flex-col justify-center md:mb-0`}>
                                 <a href={'https://files.audiorender.app/audiorender/AudioRender_1.3.0_aarch64.dmg'} download>
                                     <Button
                                         className={`flex h-10 cursor-pointer justify-between bg-white px-4 text-lg font-bold tracking-tight text-black hover:bg-neutral-800 hover:text-white lg:h-18 lg:px-10 lg:text-xl`}
                                     >
                                         <span>
-                                            <span className={`underline`}>Download Latest - v1.4</span>
+                                            <span className={`underline`}>Download Latest - v1.3</span>
                                         </span>
                                         <span>
                                             <DownloadIcon className={`ml-2 lg:!h-[200px] lg:!w-[32px]`} />
                                         </span>
                                     </Button>
                                 </a>
-                                <p className={`tac mt-4 text-xs text-neutral-200`}>Free for audio &lt; 10min.</p>
-                                <p className={`tac mt-2 text-xs text-neutral-200`}>Certain features require premium.</p>
-                                <p className={`tac mt-2 text-xs text-neutral-200`}>M-Series Apple Silicon Only  </p>
+                                <p className={`tac mt-3 text-xs text-neutral-200`}>Free for audio &lt; 10min.</p>
+                                <p className={`tac mt-1 text-xs text-neutral-200`}>Certain features require premium.</p>
+                                <p className={`tac mt-1 text-xs text-neutral-200`}>M-Series Apple Silicon Only  </p>
                             </div>
-                            <div className={`flex-col justify-center`}>
+                            <div className={`fc flex-col justify-center`}>
                                 <a href={route('checkout-page')} target="_blank" rel="noreferrer noopener">
                                     <Button
                                         variant="default"
@@ -130,10 +130,11 @@ export default function Welcome() {
                             </div>
                         </div>
                     </div>
-                    <div className={`bg-black mb-20 gap-y-12 fc h-[50vh] lg:gap-x-12 lg:px-[8vw]`}>
-                        <div className={``}>
-                            <p className={`font-inter tac mb-6 text-5xl font-bold tracking-tight text-neutral-200`}>Let your voice be <span
-                                className="clip-gradient-text">seen</span>.</p>
+                    <div className={`fc mb-20 h-[40vh] bg-black lg:gap-x-12 lg:px-[8vw] xl:h-[50vh] xl:gap-y-12`}>
+                        <div className={`flex flex-col`}>
+                            <p className={`font-inter tac mb-6 text-xl font-bold tracking-tight text-neutral-200 xl:text-5xl`}>
+                                Let your voice be <span className="clip-gradient-text">seen</span>.
+                            </p>
                             <div className={`flex flex-col gap-y-4 text-lg text-neutral-400`}>
                                 <p className={`tac font-inter text-xl font-bold tracking-tight`}>
                                     Videos have higher engagement and reach wider audiences than audio alone.
@@ -267,8 +268,8 @@ export default function Welcome() {
                             />
                         </div>
                     </div>
-                    <div className={`grid12 mb-20 gap-12 lg:px-[12vw]`}>
-                        <div className="tac cs-12 max-w-screen bg-gray-900 py-5 md:bg-transparent">
+                    <div className={`grid12 mb-12 gap-y-12 md:gap-12 lg:px-[12vw] xl:mb-20`}>
+                        <div className="tac cs-12 mb-8 max-w-screen bg-black px-4 py-8 md:bg-transparent">
                             <h2 className={`font-inter mb-4 text-2xl font-bold tracking-tight text-balance lg:text-4xl`}>
                                 Use built-in templates to render with ease.
                             </h2>
@@ -372,10 +373,11 @@ export default function Welcome() {
                             <strong className={`clip-gradient-text font-bold`}>{secondSectionIsInView && <CountUp end={1_000_000_000} />}</strong>
                         </p>
                         <p className={`ific font-inter mt-1 text-2xl font-bold lg:mt-3 lg:text-5xl`}>
-                            monthly podcast listeners on YouTube{' '}
-                            <span className={`lg:inline`}>
-                                <FaYoutube className={`ml-2 inline fill-red-500`} />
-                            </span>
+                            <span>
+                                monthly podcast listeners <br className={`md:hidden`}/> on YouTube
+                                <span className={`inline`}>
+                                    <FaYoutube className={`ml-2 inline fill-red-500`} />
+                                </span>
                             <a
                                 target={'_blank'}
                                 rel={'noreferrer noopener'}
@@ -388,6 +390,7 @@ export default function Welcome() {
                                     <sup>1</sup>
                                 </span>
                             </a>
+                            </span>{' '}
                         </p>
                         <p className={`font-inter mt-8 text-xl text-neutral-100 lg:text-2xl`}>That&apos;s almost 10x higher than Spotify.</p>
                         <p className={`font-inter mt-6 text-2xl text-neutral-400`}>
@@ -395,7 +398,7 @@ export default function Welcome() {
                         </p>
                     </div>
 
-                    <div className={`mt-24 px-4 lg:px-[12vw] py-10`}>
+                    <div className={`mt-12 xl:mt-20 px-4 py-10 lg:px-[12vw]`}>
                         <h2 className={`tac mb-4 gap-x-2 border-b-cyan-400 text-cyan-400`}>
                             <span className={`font-inter text-4xl font-bold tracking-tight`}>Pricing</span>
                         </h2>
@@ -423,10 +426,23 @@ export default function Welcome() {
                             <span className={`font-inter text-4xl font-bold tracking-tight`}>Feature Roadmap</span>
                         </h2>
                         <p className={`mb-5 text-lg tracking-tight`}>
-                            <span className={`font-bold`}>Upcoming Features.</span>{' '}
-                            <span className={`text-neutral-500`}>Plans may change without notice.</span>
+                            <span className={`font-bold`}>Upcoming features.</span>{' '}
+                            <span className={`text-neutral-500`}>These features are not yet implemented.</span>
                         </p>
                         <RoadmapSection />
+                    </div>
+                    <div className={`mt-12 mb-12 px-4 lg:mt-24 lg:mb-24 lg:px-[12vw]`}>
+                        <h2 className={`ific mb-5 gap-x-2 border-b border-b-violet-400 text-violet-400`}>
+                            <span className={`text-4xl`}>
+                                <LuGitCompare />
+                            </span>
+                            <span className={`font-inter text-4xl font-bold tracking-tight`}>Patch Notes</span>
+                        </h2>
+                        <p className={`mb-5 text-lg tracking-tight`}>
+                            <span className={`font-bold`}>Recent releases.</span>{' '}
+                            <span className={`text-neutral-500`}>For now, downgrading to a previous version is not supported.</span>
+                        </p>
+                        <PatchNotes />
                     </div>
                     <div className={`mt-12 mb-12 px-4 lg:mt-24 lg:mb-24 lg:px-[12vw]`}>
                         <h2 className={`ific mb-5 gap-x-2 border-b border-b-pink-400 text-pink-400`}>
@@ -439,7 +455,7 @@ export default function Welcome() {
                             Please feel free to reach out with questions, issues, refund requests, or feedback to our support e-mail below.
                         </p>
                         <p className={`text-2xl tracking-tight`}>
-                            <a className={`ific gap-x-2`} href={'mailto:contact@audiorender.app'}>
+                            <a className={`ific gap-x-2 rounded border p-3`} href={'mailto:contact@audiorender.app'}>
                                 <LuMail className={``} />
                                 contact@audiorender.app
                             </a>
