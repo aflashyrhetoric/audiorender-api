@@ -47,27 +47,44 @@ export default function Welcome() {
             <Head title="AudioRender">
                 <link rel="preconnect" href="https://fonts.bunny.net" />
                 <link
-                    href="https://fonts.bunny.net/css?family=alegreya-sans:100,400,700,900|inter:400,500,600,700|amaranth:400,700"
+                    href="https://fonts.bunny.net/css?family=alegreya-sans:100,400,700,900|inter:300,400,500i,500,600,700|amaranth:400,700"
                     rel="stylesheet"
                 />
             </Head>
             <div className="gradient-dark flex flex-col items-center text-white">
                 <main>
-                    <div className={`fc min-h-[60vh] flex-col lg:min-h-[95vh] xl:pt-24`}>
-                        <div className="fc flex-row p-6 md:pt-6">
-                            <AppLogo className={`size-16`} />
-                            <h2>AudioRender</h2>
+                    {/*<div className="h-32 bg-radial-[at_50%_75%] from-sky-200 via-blue-400 to-indigo-900 to-90%"></div>*/}
+
+                    <div className={`fc relative min-h-[60vh] flex-col pb-32 lg:min-h-[95vh] xl:pt-24`}>
+                        <div className={`fc absolute top-0 h-full w-full`}>
+                            <div className={`bg h-full w-full bg-radial-[at_20%_35%] from-indigo-500/10 to-black`} />
                         </div>
-                        <div className={`fc`}>
-                            <h1 className={`font-inter tac mt-0 gap-2 text-3xl text-balance md:text-4xl`}>
-                                <span className="font-bold clip-gradient-text">AudioRender</span> is a <span className="font-bold">macOS app</span> that lets you create
-                                <span className="font-bold"> polished videos</span> from
-                                <span className="font-bold"> MP3s</span>!
-                            </h1>
+                        <div className={`fc absolute top-0 h-full w-full`}>
+                            <div className={`bg h-full w-full bg-radial-[at_80%_85%] from-purple-500/10 to-black/50`} />
                         </div>
-                        <div className={`fc mt-8 text-xl`}>
+                        <div className={`absolute bottom-0 h-24 md:h-32 w-full`}>
+                            <div className={`bg h-full w-full bg-gradient-to-b from-black/0 to-black`} />
+                        </div>
+                        <div className={`fc z-10 flex-col`}>
+                            <div className="fc mt-12 mb-12 flex-row lg:mt-0">
+                                <AppLogo className={`size-16 lg:size-24`} />
+                                <h2 className={`ml-2 text-lg font-bold tracking-tight lg:text-3xl`}>AudioRender</h2>
+                            </div>
+                            <div className={`fc`}>
+                                <h1
+                                    className={`font-inter tac mt-0 gap-2 border-neutral-100/50 pb-4 text-3xl leading-12 font-light tracking-tight text-balance md:border-b md:text-4xl`}
+                                >
+                                    <span className="clip-gradient-text font-bold">AudioRender</span> is a{' '}
+                                    <span className="font-bold">macOS app</span> that <br className={`hidden md:block`} />
+                                    lets you create
+                                    <span className="font-bold"> polished videos</span> from
+                                    <span className="font-bold"> MP3s</span>.
+                                </h1>
+                            </div>
+                        </div>{' '}
+                        <div className={`fc z-10 mt-8 text-xl`}>
                             <ul
-                                className={`flex w-full flex-col items-start space-y-3 p-5 font-sans text-sm sm:text-base md:text-lg font-medium sm:items-center lg:w-[600px] lg:items-start`}
+                                className={`flex w-full flex-col items-start space-y-3 p-5 font-sans text-sm font-medium sm:items-center sm:text-base md:text-lg lg:w-[600px] lg:items-start`}
                             >
                                 <li className={`fic`}>
                                     <span className={`mr-4`}>
@@ -96,7 +113,7 @@ export default function Welcome() {
                                 </li>
                             </ul>
                         </div>
-                        <div className={`mt-12 mb-16 flex flex-col items-center gap-5 md:flex-row md:items-start`}>
+                        <div className={`z-10 mt-12 mb-16 flex flex-col items-center gap-5 md:flex-row md:items-start`}>
                             <div className={`mb-5 flex-col justify-center md:mb-0`}>
                                 <a href={'https://files.audiorender.app/audiorender/AudioRender_1.3.0_aarch64.dmg'} download>
                                     <Button
@@ -130,17 +147,17 @@ export default function Welcome() {
                             </div>
                         </div>
                     </div>
-                    <div className={`fc mb-20 h-[40vh] bg-black lg:gap-x-12 lg:px-[8vw] xl:h-[50vh] xl:gap-y-12`}>
+                    <div className={`fc mb-20 h-[30vh] bg-black lg:gap-x-12 lg:px-[8vw] xl:h-[30vh] pb-12 xl:gap-y-12`}>
                         <div className={`flex flex-col`}>
-                            <p className={`font-inter tac mb-6 text-2xl font-bold tracking-tight text-neutral-200 xl:text-5xl`}>
-                                Let your voice be <span className="clip-gradient-text">seen</span>.
+                            <p className={`font-inter tac mb-8 text-2xl font-bold tracking-tight text-neutral-200 xl:text-5xl`}>
+                                Let your voice be <span className={`clip-gradient-text z-20`}>seen</span>.
                             </p>
-                            <div className={`flex flex-col gap-y-4 text-lg text-neutral-400`}>
-                                <p className={`tac font-inter text-xl font-bold tracking-tight`}>
-                                    Videos have higher engagement and reach wider audiences than audio alone.
+                            <div className={`flex items-center flex-col gap-y-3 text-lg text-neutral-300`}>
+                                <p className={`tac font-inter text-xl xl:text-3xl max-w-[80%] lg:max-w-none text-balance font-bold tracking-tight`}>
+                                    Videos reach more people than audio alone.
                                 </p>
-                                <p className={`tac font-inter text-xl tracking-tight`}>
-                                    AudioRender makes it <span className={`font-bold`}>easy</span> to bridge the gap.
+                                <p className={`tac font-inter text-xl xl:text-3xl tracking-tight`}>
+                                    AudioRender makes it <span className={`font-bold italic`}>easy</span> to bridge the gap.
                                 </p>
                             </div>
                         </div>
