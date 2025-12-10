@@ -10,7 +10,7 @@ type Props = {
 const Pricing: React.FC<Props> = ({ className = '' }: Props) => {
     return (
         <div className={`flex flex-col justify-around gap-8 lg:flex-row`}>
-            <div className={`w-full rounded-xl border border-neutral-700 bg-neutral-900/30 lg:w-[450px]`}>
+            <div className={`w-full rounded-xl border border-neutral-700 bg-neutral-900/30 lg:max-w-[450px]`}>
                 <div className={`ific h-[80px] w-full justify-between border-b border-neutral-700 p-8`}>
                     <span className={`ific font-inter text-xl font-bold tracking-tight lg:text-2xl`}>Free</span>
                     <span className={`font-inter text-3xl text-cyan-400`}>$0</span>
@@ -48,7 +48,7 @@ const Pricing: React.FC<Props> = ({ className = '' }: Props) => {
                     </a>
                 </div>
             </div>
-            <div className={`w-full rounded-xl border border-transparent bg-gradient-to-br from-blue-950 to-purple-950 lg:w-[450px]`}>
+            <div className={`w-full rounded-xl border border-transparent bg-gradient-to-br from-blue-950 to-purple-950 lg:max-w-[450px]`}>
                 <div className={`ific h-[80px] w-full justify-between border-b border-transparent p-8`}>
                     <span className={`ific font-inter clip-gradient-text text-xl font-bold tracking-tight lg:text-2xl`}>Premium</span>
                     <span className={`font-inter text-3xl text-cyan-400`}>

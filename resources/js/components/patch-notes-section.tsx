@@ -77,7 +77,7 @@ const PatchNotes: React.FC<Props> = () => {
     ];
 
     return (
-        <div className={`grid12 gap-8 p-5 xl:p-0`}>
+        <div className={`grid12 gap-8 xl:p-5 xl:p-0`}>
             {patchNotes.reverse().map((note) => (
                 <PatchNoteData key={note.version} note={note} />
             ))}

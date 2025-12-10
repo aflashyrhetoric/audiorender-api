@@ -53,30 +53,30 @@ export default function Welcome() {
             </Head>
             <div className="gradient-dark flex flex-col items-center text-white">
                 <main>
-                    <div className={`fc min-h-[60vh] flex-col pt-0 lg:min-h-[95vh] xl:pt-24`}>
-                        <div className="fc flex-col p-6 pt-16 md:pt-6">
-                            <AppLogo className={`size-32`} />
-                            <h1 className="font-inter mt-4 text-[1.5rem] font-bold tracking-tight xl:text-[2rem]">AudioRender</h1>
+                    <div className={`fc min-h-[60vh] flex-col lg:min-h-[95vh] xl:pt-24`}>
+                        <div className="fc flex-row p-6 md:pt-6">
+                            <AppLogo className={`size-16`} />
+                            <h2>AudioRender</h2>
                         </div>
-                        <p className={`lg:fic tac font-inter mt-10 hidden gap-2 text-3xl font-bold tracking-tight text-balance md:text-4xl`}>
-                            Turn your MP3s into <span className={`clip-gradient-text`}>eye-catching</span> videos.
-                        </p>
-                        <p className={`fic tac font-inter mt-10 gap-2 text-xl font-bold tracking-tight text-balance md:text-4xl lg:hidden`}>
-                            Turn your MP3s into eye-catching videos.
-                        </p>
+                        <div className={`fc`}>
+                            <h1 className={`font-inter tac mt-0 gap-2 text-3xl text-balance md:text-4xl`}>
+                                <span className="font-bold clip-gradient-text">AudioRender</span> is a <span className="font-bold">macOS app</span> that lets you create
+                                <span className="font-bold"> polished videos</span> from
+                                <span className="font-bold"> MP3s</span>!
+                            </h1>
+                        </div>
                         <div className={`fc mt-8 text-xl`}>
                             <ul
-                                className={`flex w-full flex-col items-center space-y-3 p-5 font-sans text-sm font-medium lg:w-[600px] lg:items-start lg:text-lg`}
+                                className={`flex w-full flex-col items-start space-y-3 p-5 font-sans text-sm sm:text-base md:text-lg font-medium sm:items-center lg:w-[600px] lg:items-start`}
                             >
                                 <li className={`fic`}>
                                     <span className={`mr-4`}>
                                         <Checkmark size={'medium'} />{' '}
                                     </span>
-                                    <span className={`text-balance`}>Turn your MP3s into shareable videos in a few minutes.</span>
+                                    <span className={`text-balance`}>Reach listeners AND viewers by crafting MP3s into upload-ready videos.</span>
                                 </li>
                                 <li className={`fic`}>
                                     <span className={`mr-4`}>
-                                        {' '}
                                         <Checkmark size={'medium'} />{' '}
                                     </span>
                                     <span className={`text-balance`}>Bulk-friendly. Convert multiple files at once.</span>
@@ -132,7 +132,7 @@ export default function Welcome() {
                     </div>
                     <div className={`fc mb-20 h-[40vh] bg-black lg:gap-x-12 lg:px-[8vw] xl:h-[50vh] xl:gap-y-12`}>
                         <div className={`flex flex-col`}>
-                            <p className={`font-inter tac mb-6 text-xl font-bold tracking-tight text-neutral-200 xl:text-5xl`}>
+                            <p className={`font-inter tac mb-6 text-2xl font-bold tracking-tight text-neutral-200 xl:text-5xl`}>
                                 Let your voice be <span className="clip-gradient-text">seen</span>.
                             </p>
                             <div className={`flex flex-col gap-y-4 text-lg text-neutral-400`}>
@@ -374,22 +374,22 @@ export default function Welcome() {
                         </p>
                         <p className={`ific font-inter mt-1 text-2xl font-bold lg:mt-3 lg:text-5xl`}>
                             <span>
-                                monthly podcast listeners <br className={`md:hidden`}/> on YouTube
+                                monthly podcast listeners <br className={`md:hidden`} /> on YouTube
                                 <span className={`inline`}>
                                     <FaYoutube className={`ml-2 inline fill-red-500`} />
                                 </span>
-                            <a
-                                target={'_blank'}
-                                rel={'noreferrer noopener'}
-                                href={
-                                    'https://blog.youtube/news-and-events/1-billion-monthly-podcast-users/?utm_source=podnews.net&utm_medium=web&utm_campaign=podnews.net%3A2025-02-27'
-                                }
-                                className={`inline`}
-                            >
-                                <span className={`ml-1 align-super text-base text-blue-500`}>
-                                    <sup>1</sup>
-                                </span>
-                            </a>
+                                <a
+                                    target={'_blank'}
+                                    rel={'noreferrer noopener'}
+                                    href={
+                                        'https://blog.youtube/news-and-events/1-billion-monthly-podcast-users/?utm_source=podnews.net&utm_medium=web&utm_campaign=podnews.net%3A2025-02-27'
+                                    }
+                                    className={`inline`}
+                                >
+                                    <span className={`ml-1 align-super text-base text-blue-500`}>
+                                        <sup>1</sup>
+                                    </span>
+                                </a>
                             </span>{' '}
                         </p>
                         <p className={`font-inter mt-8 text-xl text-neutral-100 lg:text-2xl`}>That&apos;s almost 10x higher than Spotify.</p>
@@ -398,7 +398,7 @@ export default function Welcome() {
                         </p>
                     </div>
 
-                    <div className={`mt-12 xl:mt-20 px-4 py-10 lg:px-[12vw]`}>
+                    <div className={`mt-12 px-4 py-10 lg:px-[12vw] xl:mt-20`}>
                         <h2 className={`tac mb-4 gap-x-2 border-b-cyan-400 text-cyan-400`}>
                             <span className={`font-inter text-4xl font-bold tracking-tight`}>Pricing</span>
                         </h2>
