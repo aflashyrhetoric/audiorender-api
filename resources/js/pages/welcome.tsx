@@ -37,6 +37,7 @@ import {
     LuTabletSmartphone,
     LuVideo,
 } from 'react-icons/lu';
+import { AlertCircleIcon } from 'lucide-react';
 
 export default function Welcome() {
     const ref = useRef(null);
@@ -113,10 +114,16 @@ export default function Welcome() {
                                 </li>
                             </ul>
                         </div>
+                        <div className={`fc z-10 bg-orange-700 px-4 py-4 rounded-full mt-8 text-white`}>
+                            <p className={`tac font-inter ific text-sm text-balance`}>
+                                <AlertCircleIcon className={`mr-2`}/>
+                                Download and purchase has been temporarily disabled pending review of a reliability issue with v1.3.</p>
+                        </div>
                         <div className={`z-10 mt-12 mb-16 flex flex-col items-center gap-5 md:flex-row md:items-start`}>
                             <div className={`mb-5 flex-col justify-center md:mb-0`}>
-                                <a href={'https://files.audiorender.app/audiorender/AudioRender_1.3.0_aarch64.dmg'} download>
+                                <a href={'https://files.audiorender.app/audiorender/AudioRender_1.3.0_aarch64.dmg'} download className={`pointer-events-none`}>
                                     <Button
+                                        disabled
                                         className={`flex h-10 cursor-pointer justify-between bg-white px-4 text-lg font-bold tracking-tight text-black hover:bg-neutral-800 hover:text-white lg:h-18 lg:px-10 lg:text-xl`}
                                     >
                                         <span>
@@ -132,8 +139,9 @@ export default function Welcome() {
                                 <p className={`tac mt-1 text-xs text-neutral-200`}>M-Series Apple Silicon Only  </p>
                             </div>
                             <div className={`fc flex-col justify-center`}>
-                                <a href={route('checkout-page')} target="_blank" rel="noreferrer noopener">
+                                <a href={route('checkout-page')} target="_blank" rel="noreferrer noopener" className={`pointer-events-none`}>
                                     <Button
+                                        disabled
                                         variant="default"
                                         className={`font-inter flex h-10 cursor-pointer justify-between bg-blue-700 px-4 text-lg font-bold tracking-tight text-white hover:bg-blue-800 lg:h-18 lg:px-10 lg:text-2xl`}
                                     >
