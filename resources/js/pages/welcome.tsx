@@ -63,7 +63,7 @@ export default function Welcome() {
                         <div className={`fc absolute top-0 h-full w-full`}>
                             <div className={`bg h-full w-full bg-radial-[at_80%_85%] from-purple-500/10 to-black/50`} />
                         </div>
-                        <div className={`absolute bottom-0 h-24 md:h-32 w-full`}>
+                        <div className={`absolute bottom-0 h-24 w-full md:h-32`}>
                             <div className={`bg h-full w-full bg-gradient-to-b from-black/0 to-black`} />
                         </div>
                         <div className={`fc z-10 flex-col`}>
@@ -114,16 +114,21 @@ export default function Welcome() {
                                 </li>
                             </ul>
                         </div>
-                        <div className={`fc z-10 bg-orange-700 px-4 py-4 rounded-full mt-8 text-white`}>
+                        <div className={`fc z-10 mt-8 rounded-full bg-green-700 px-4 py-4 text-white`}>
                             <p className={`tac font-inter ific text-sm text-balance`}>
-                                <AlertCircleIcon className={`mr-2`}/>
-                                Download and purchase has been temporarily disabled pending review of a reliability issue with v1.3.</p>
+                                <AlertCircleIcon className={`mr-2`} />
+                                Download and purchase has been enabled following fixes for v1.3. Thank you for your patience! ❤️
+                            </p>
                         </div>
                         <div className={`z-10 mt-12 mb-16 flex flex-col items-center gap-5 md:flex-row md:items-start`}>
                             <div className={`mb-5 flex-col justify-center md:mb-0`}>
-                                <a href={'https://files.audiorender.app/audiorender/AudioRender_1.3.0_aarch64.dmg'} download className={`pointer-events-none`}>
+                                <a
+                                    href={'https://files.audiorender.app/audiorender/AudioRender_1.3.0_aarch64.dmg'}
+                                    download
+                                    className={`pointer-events-none`}
+                                >
                                     <Button
-                                        disabled
+                                        // disabled
                                         className={`flex h-10 cursor-pointer justify-between bg-white px-4 text-lg font-bold tracking-tight text-black hover:bg-neutral-800 hover:text-white lg:h-18 lg:px-10 lg:text-xl`}
                                     >
                                         <span>
@@ -141,7 +146,7 @@ export default function Welcome() {
                             <div className={`fc flex-col justify-center`}>
                                 <a href={route('checkout-page')} target="_blank" rel="noreferrer noopener" className={`pointer-events-none`}>
                                     <Button
-                                        disabled
+                                        // disabled
                                         variant="default"
                                         className={`font-inter flex h-10 cursor-pointer justify-between bg-blue-700 px-4 text-lg font-bold tracking-tight text-white hover:bg-blue-800 lg:h-18 lg:px-10 lg:text-2xl`}
                                     >
@@ -155,16 +160,16 @@ export default function Welcome() {
                             </div>
                         </div>
                     </div>
-                    <div className={`fc mb-20 h-[30vh] bg-black lg:gap-x-12 lg:px-[8vw] xl:h-[30vh] pb-12 xl:gap-y-12`}>
+                    <div className={`fc mb-20 h-[30vh] bg-black pb-12 lg:gap-x-12 lg:px-[8vw] xl:h-[30vh] xl:gap-y-12`}>
                         <div className={`flex flex-col`}>
                             <p className={`font-inter tac mb-8 text-2xl font-bold tracking-tight text-neutral-200 xl:text-5xl`}>
                                 Let your voice be <span className={`clip-gradient-text z-20`}>seen</span>.
                             </p>
-                            <div className={`flex items-center flex-col gap-y-3 text-lg text-neutral-300`}>
-                                <p className={`tac font-inter text-xl xl:text-3xl max-w-[80%] lg:max-w-none text-balance font-bold tracking-tight`}>
+                            <div className={`flex flex-col items-center gap-y-3 text-lg text-neutral-300`}>
+                                <p className={`tac font-inter max-w-[80%] text-xl font-bold tracking-tight text-balance lg:max-w-none xl:text-3xl`}>
                                     Videos reach more people than audio alone.
                                 </p>
-                                <p className={`tac font-inter text-xl xl:text-3xl tracking-tight`}>
+                                <p className={`tac font-inter text-xl tracking-tight xl:text-3xl`}>
                                     AudioRender makes it <span className={`font-bold italic`}>easy</span> to bridge the gap.
                                 </p>
                             </div>
