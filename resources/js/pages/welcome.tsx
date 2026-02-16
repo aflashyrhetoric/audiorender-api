@@ -16,6 +16,7 @@ import SiteFooter from '@/components/site-footer';
 import FeatureSquare from '@/pages/feature-square';
 import VideoHeading from '@/pages/partials/video-heading';
 import VideoLabel from '@/pages/partials/video-label';
+import { AlertCircleIcon } from 'lucide-react';
 import { useInView } from 'motion/react';
 import { useRef } from 'react';
 import {
@@ -37,7 +38,6 @@ import {
     LuTabletSmartphone,
     LuVideo,
 } from 'react-icons/lu';
-import { AlertCircleIcon } from 'lucide-react';
 
 export default function Welcome() {
     const ref = useRef(null);
@@ -122,11 +122,7 @@ export default function Welcome() {
                         </div>
                         <div className={`z-10 mt-12 mb-16 flex flex-col items-center gap-5 md:flex-row md:items-start`}>
                             <div className={`mb-5 flex-col justify-center md:mb-0`}>
-                                <a
-                                    href={'https://files.audiorender.app/audiorender/AudioRender_1.3.1_aarch64.dmg'}
-                                    download
-                                    className={`pointer-events-none`}
-                                >
+                                <a href={'https://files.audiorender.app/audiorender/AudioRender_1.3.1_aarch64.dmg'} download>
                                     <Button
                                         // disabled
                                         className={`flex h-10 cursor-pointer justify-between bg-white px-4 text-lg font-bold tracking-tight text-black hover:bg-neutral-800 hover:text-white lg:h-18 lg:px-10 lg:text-xl`}
@@ -144,7 +140,7 @@ export default function Welcome() {
                                 <p className={`tac mt-1 text-xs text-neutral-200`}>M-Series Apple Silicon Only  </p>
                             </div>
                             <div className={`fc flex-col justify-center`}>
-                                <a href={route('checkout-page')} target="_blank" rel="noreferrer noopener" className={`pointer-events-none`}>
+                                <a href={route('checkout-page')} target="_blank" rel="noreferrer noopener">
                                     <Button
                                         // disabled
                                         variant="default"
