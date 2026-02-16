@@ -75,7 +75,7 @@ const PatchNotes: React.FC<Props> = () => {
             ],
         },
         {
-            version: '1.3.0 - Patched',
+            version: '1.3.1',
             type: 'bugfix',
             changes: [
                 {

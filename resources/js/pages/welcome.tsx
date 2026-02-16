@@ -117,13 +117,13 @@ export default function Welcome() {
                         <div className={`fc z-10 mt-8 rounded-full bg-green-700 px-4 py-4 text-white`}>
                             <p className={`tac font-inter ific text-sm text-balance`}>
                                 <AlertCircleIcon className={`mr-2`} />
-                                Download and purchase has been enabled following fixes for v1.3. Thank you for your patience! ❤️
+                                Download and purchase has been enabled following fixes for v1.3.1. Thank you for your patience! ❤️
                             </p>
                         </div>
                         <div className={`z-10 mt-12 mb-16 flex flex-col items-center gap-5 md:flex-row md:items-start`}>
                             <div className={`mb-5 flex-col justify-center md:mb-0`}>
                                 <a
-                                    href={'https://files.audiorender.app/audiorender/AudioRender_1.3.0_aarch64.dmg'}
+                                    href={'https://files.audiorender.app/audiorender/AudioRender_1.3.1_aarch64.dmg'}
                                     download
                                     className={`pointer-events-none`}
                                 >
@@ -132,7 +132,7 @@ export default function Welcome() {
                                         className={`flex h-10 cursor-pointer justify-between bg-white px-4 text-lg font-bold tracking-tight text-black hover:bg-neutral-800 hover:text-white lg:h-18 lg:px-10 lg:text-xl`}
                                     >
                                         <span>
-                                            <span className={`underline`}>Download Latest - v1.3</span>
+                                            <span className={`underline`}>Download Latest - v1.3.1</span>
                                         </span>
                                         <span>
                                             <DownloadIcon className={`ml-2 lg:!h-[200px] lg:!w-[32px]`} />
