@@ -12,6 +12,10 @@ const FAQSection: React.FC<Props> = ({ className = '' }: Props) => {
             text: 'AudioRender is a macOS app that lets you drop in an MP3 file and create simple, upload-ready videos with waveforms and transcriptions in a few clicks.',
         },
         {
+            title: 'My video renders but it\'s completely black.',
+            text: 'If you used the Template Editor and rendered a template, this may happen, but it\'s not a bug! Note that we do not provide a default background, so your template (which usually has black/dark colored text and waveforms) may be rendering on top of a black background. To fix this, simply add a background image. Or, you can add a Solid color element, maximize it, and send it to the bottom layer.',
+        },
+        {
             title: 'Why is the first render so slow?',
             text: 'Some things need to be downloaded and set up behind the scenes. They are essential to the core rendering functionality. You only need to do this once, and sometimes when you need a new version.',
         },
